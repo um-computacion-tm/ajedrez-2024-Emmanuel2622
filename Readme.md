@@ -11,7 +11,7 @@ ce.denis@alumno.um.edu.ar
 [![Maintainability](https://api.codeclimate.com/v1/badges/68ee2052845e730b851a/maintainability)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-Emmanuel2622/maintainability)
 
 # Coverage
-[![Maintainability](https://api.codeclimate.com/v1/badges/68ee2052845e730b851a/maintainability)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-Emmanuel2622/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/68ee2052845e730b851a/test_coverage)](https://codeclimate.com/github/um-computacion-tm/ajedrez-2024-Emmanuel2622/test_coverage)
 
 # Description
 
