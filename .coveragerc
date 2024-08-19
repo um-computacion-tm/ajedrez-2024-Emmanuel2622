@@ -2,6 +2,7 @@
 source =
     main
     chess
+    board
 omit =
     venv/*
     */test*
