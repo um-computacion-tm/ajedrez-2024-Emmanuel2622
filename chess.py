@@ -29,6 +29,9 @@ class Chess:
     @property        
     def turn(self):
         return self.__turn__
+    
+    def show_board(self):
+        return str(self.__board__)
 
     def change_turn(self):
         if self.__turn__ == "WHITE":
