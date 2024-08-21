@@ -10,7 +10,7 @@
 
 - Se crearon las class knight, king, queen, bishop. Y se agrego en el archivo board.py sus posiciones.
 
-- Se le agrego la funcion "__str__" a la class Rock, con una comprobacion del color de la posicion para asignarle el color a su figura.
+- Se le agrego la funcion "__str__" a la class Rock, con una comprobacion del color de la posicion para asignarle el color a su figura. Tambien se le agrego la funcion "__str__" a la class Board
 
 ## [0.0.3] - 17-08-2024
 
