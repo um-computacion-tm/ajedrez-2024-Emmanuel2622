@@ -1,3 +1,4 @@
 Esquema.txt
 .coverage
 venv
+__pycache__
