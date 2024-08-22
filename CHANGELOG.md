@@ -1,48 +1,104 @@
 # Changelog
 
-## [0.0.4] - 20-08-2024
+___
+## [0.0.5] - 21-08-2024
+
+### Added
+
+- Se agregaro la funcion __"str"__ a todas las piezas del ajedrez y se colocaron sus respectivas figuras.
+
+- Se crearon las clases de excepciones dentro del archivo `exceptions.py`
+
+- Archivo `exceptions.py` creado.
 
 ### Removed
 
-- Se elimino la comprobacion de los valores ingresados en los inputs de la funcion play.
+- Se borro el archivo `tablero.py`
 
-## Added
+___
+## [0.0.4] - 20-08-2024
 
-- Se crearon las class knight, king, queen, bishop. Y se agrego en el archivo board.py sus posiciones.
+### Changed
 
-- Se le agrego la funcion "__str__" a la class Rock, con una comprobacion del color de la posicion para asignarle el color a su figura. Tambien se le agrego la funcion "__str__" a la class Board
+- Se modifico el nombre del archivo `main.py` por `cli.py` 
 
+### Added
+
+- Se creo la funcion __"show_board"__ dentro de la clase __Chess__.
+
+- Se creo la clase __knight__.
+- Se creo la clase __king__.
+- Se creo la clase __queen__.
+- Se creo la clase __bishop__.
+
+- Dentro de la clase __Board__, Se agregaron las posiciones de las piezas faltantes y se creo la funcion __"str"__ que imprime el tablero con sus piezas.
+
+- Se agrgo la funcion __"str"__ a la clase __Rook__ que devuelve el color de la pieza.
+
+- Archivo `queen.py` creado.
+- Archivo `king.py` creado.
+- Archivo `knight.py` creado.
+- Archivo `bishop.py` creado.
+
+### Removed
+
+- Se elimino las validaciones de parametros de los inputs de la funcion __"play"__ del archivo `cli.py`.
+
+
+___
 ## [0.0.3] - 17-08-2024
 
 ### Changed
 
-- Se modifico los return de las comprobaciones de las entradas que espera la funcion mov del archivo chess.py.
+- Se modifco las validacion de parametros de las entradas de la funcion __"move"__ del archivo `chess.py`
 
 ### Added 
 
-- Se agrego las comprobaciones de que los valores igresados en (to_row, to_col) de la funcion mov del archivo chess.py sean mayores a 0 y menores a 7.
+- Se agregaron las validacion de parametros de entrada que faltaban de la funcion __"move"__ (__to_row__, __to_col__) del archivo `chess.py`.
 
+___
 ## [0.0.2] - 16-08-2024
 
 ### Changed
 
-- Se modifico el str que devuelve el return de las lineas 12, 14
+- En el archivo `Chess.py` se modifico la forma de llamar la clase __Board__ en la funcion __"init"__ de la clase __Chess__, y los "string" que devuelven los __return__ de las validacion de parametros de las entradas de la funcion __"move"__ 
 
 ### Added
 
-- Se agrego las comprobaciones de que los valores ingresados en los inputs (from_row, from_col, to_row, to_col) de la funcion play del archivo main.py sean mayores a 0 y menores a 7.
+- Se creo la funcion __"turn"__ en la clase __Chess__ del archivo `chess.py`
 
-- Se agrego la funcion turn
+- Se creo la clase __Board__ en el archivo `board.py`, tambien se creo las funciones __"init"__ y __"get_piece"__, se agrego en la funcion __"init"__ un bucle para la creacion del tablero y agregar las piezas __Rook__ en sus posiciones iniciales.
 
-- Se crearon los archivos rook.py, pieces.py, tablero.py, pawn.py
+- Se creo la clase __Pawn__ en el archivo `pawn.py`.
 
-### Fixed
+- Se creo la clase __Pieces__ en el archivo `pieces.py`.
 
-- En el archivo Chess.py se arreglo la forma de llamar a la clase board en la linea 5.
+- Se creo la clase __Rook__ en el archivo `rook.py`.
 
+- Se crearon las funciones __"main"__ y __"play"__, Se agregaron los parametros de que los valores ingresados en los inputs (__from_row__, __from_col__, __to_row__, __to_col__) de la funcion __"play"__ del archivo `main.py` sean mayores a 0 y menores a 7.
 
+- Archivo `rook.py` creado.
+- Archivo `pieces.py` creado.
+- Archivo `tablero.py` creado.
+- Archivo `pawn.py` creado.
+- Archivo `main.py` creado.
+- Archivo `Dockerfile` creado.
+
+___
 ## [0.0.1] - 15-08-2024
 
 ### Added
 
-- Se agrego las comprobaciones de que los valores ingresados en (from_row, from_col) de la funcion mov del archivo chess.py sean mayores a 0 y menores a 7.
+- Se creo la clase __Chess__ y se le agrego las funciones __"move"__, __"init"__ y "__change_turn__", y se agregaron parametros para las entradas que espera la funcion __"move"__, en el archivo `chess.py`
+
+- Archivo `CHANGELOG.md` creado.
+- Archivo `Readme.md` creado.
+- Archivo `.coveragerc` creado.
+- Archivo `.gitignore` creado.
+- Archivo `.codeclimate.yml` creado.
+- Carpeta `.circle` creada.
+- Archivo `.circle/.config.yml` creado.
+- Archivo `chess.py` creado.
+- Archivo `test_chess.py` creado.
+- Archivo `Requirements.txt` creado.
+
