@@ -3,6 +3,7 @@ source =
     cli
     chess 
     board
+    pawn
 omit =
     venv/*
     */test*

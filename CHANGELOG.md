@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6] - 22-08-2024
+
+### Added
+
+- Se creo la funcion __"move"__ que toma el valor que retorna por la funcion __"type_move"__, en caso de ser __"True"__ mueve el peon a la poscion indicada.
+
+- Se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
 ___
 ## [0.0.5] - 21-08-2024
 
