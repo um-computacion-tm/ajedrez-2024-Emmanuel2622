@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.0.7] - 23-08-2024
+
+### Added
+
+- Se incorporo el segundo movimiento del peon, "Salto doble hacia adelante".
+
+- Se creo la variable __"first_move"__ para verificar si es el primer movimiento del peon, es caso de se _"True"_, el salto doble es valido.
+
+- Se agregaron los test para comprobar el correcto funcionamiento del salto doble del peon.
+
 ## [0.0.6] - 22-08-2024
 
 ### Added
@@ -7,6 +17,8 @@
 - Se creo la funcion __"move"__ que toma el valor que retorna por la funcion __"type_move"__, en caso de ser __"True"__ mueve el peon a la poscion indicada.
 
 - Se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
+
+- Archivo `test_pawn.py` creado.
 ___
 ## [0.0.5] - 21-08-2024
 
@@ -21,13 +33,14 @@ ___
 ### Removed
 
 - Se borro el archivo `tablero.py`
-
 ___
 ## [0.0.4] - 20-08-2024
 
 ### Changed
 
 - Se modifico el nombre del archivo `main.py` por `cli.py` 
+
+- Se modifico el nombre del archivo `test_main.py` por `test_cli.py`
 
 ### Added
 
@@ -46,18 +59,16 @@ ___
 - Archivo `king.py` creado.
 - Archivo `knight.py` creado.
 - Archivo `bishop.py` creado.
-
+ 
 ### Removed
 
 - Se elimino las validaciones de parametros de los inputs de la funcion __"play"__ del archivo `cli.py`.
-
-
 ___
 ## [0.0.3] - 17-08-2024
 
 ### Changed
 
-- Se modifco las validacion de parametros de las entradas de la funcion __"move"__ del archivo `chess.py`
+- Se modifco las validacion de parametros de las entradas de la funcion __"move"__ del archivo `chess.py`.
 
 ### Added 
 
@@ -68,13 +79,13 @@ ___
 
 ### Changed
 
-- En el archivo `Chess.py` se modifico la forma de llamar la clase __Board__ en la funcion __"init"__ de la clase __Chess__, y los "string" que devuelven los __return__ de las validacion de parametros de las entradas de la funcion __"move"__ 
+- En el archivo `Chess.py` se modifico la forma de llamar la clase __Board__ en la funcion __"init"__ de la clase __Chess__, y los "string" que devuelven los __return__ de las validacion de parametros de las entradas de la funcion __"move"__.
 
 ### Added
 
-- Se creo la funcion __"turn"__ en la clase __Chess__ del archivo `chess.py`
+- Se creo la funcion __"turn"__ en la clase __Chess__ del archivo `chess.py`.
 
-- Se creo la clase __Board__ en el archivo `board.py`, tambien se creo las funciones __"init"__ y __"get_piece"__, se agrego en la funcion __"init"__ un bucle para la creacion del tablero y agregar las piezas __Rook__ en sus posiciones iniciales.
+- Se creo la clase __Board__ en el archivo `board.py`, tambien se creo las funciones __"init"__ que contiene un bucle para la creacion del tablero y agregar las piezas __Rook__ en sus posiciones iniciales, y la funcion __"get_piece"__ que devuelve la posicion del la pieza ingresada en los parametros.
 
 - Se creo la clase __Pawn__ en el archivo `pawn.py`.
 
@@ -82,21 +93,26 @@ ___
 
 - Se creo la clase __Rook__ en el archivo `rook.py`.
 
-- Se crearon las funciones __"main"__ y __"play"__, Se agregaron los parametros de que los valores ingresados en los inputs (__from_row__, __from_col__, __to_row__, __to_col__) de la funcion __"play"__ del archivo `main.py` sean mayores a 0 y menores a 7.
+- Se crearon las funciones __"main"__ y __"play"__ y se agregaron las condiciones para que los valores ingresados en los inputs (__from_row__, __from_col__, __to_row__, __to_col__) de la funcion __"play"__ del archivo `main.py` sean mayores a 0 y menores a 7.
 
+- Archivo `board.py` creado.
+- Archivo `test_board.py` creado.
 - Archivo `rook.py` creado.
 - Archivo `pieces.py` creado.
 - Archivo `tablero.py` creado.
 - Archivo `pawn.py` creado.
 - Archivo `main.py` creado.
+- Archivo `test_main.py` creado.
 - Archivo `Dockerfile` creado.
 
 ___
-## [0.0.1] - 15-08-2024
+## [0.0.1] - 14-08-2024
 
 ### Added
 
-- Se creo la clase __Chess__ y se le agrego las funciones __"move"__, __"init"__ y "__change_turn__", y se agregaron parametros para las entradas que espera la funcion __"move"__, en el archivo `chess.py`
+- Se creo la clase __Chess__ y se le agrego las funciones __"move"__, __"init"__ y "__change_turn__", tambien se agregaron las condiciones para los parametros que espera la funcion __"move"__, en el archivo `chess.py`.
+
+- Se crearon los test que evaluan las validacion de los parametros ingresados en la funcion __"move"__ `chess.py`.
 
 - Archivo `CHANGELOG.md` creado.
 - Archivo `Readme.md` creado.
