@@ -61,5 +61,49 @@ class Test_Pawn(unittest.TestCase):
             result, "Error en el movimiento"
             )
     
+    def test_salto_doble_adelante(self):
+        self.__pawn__ = Pawn("WHITE")
+        self.__pawn__.__first_move__ = True
+
+        result = self.__pawn__.move(6,0,4,0, self.__board__)
+        print(result)
+        self.assertEqual(
+            result, True
+        )
+
+    def test_salto_doble_adelante_no_first_move(self):
+        self.__pawn__ = Pawn("WHITE")
+        self.__pawn__.__first_move__ = True
+        self.__pawn__.move(6,0,4,0, self.__board__)
+        
+        self.__pawn__.__first_move__ = False
+        result = self.__pawn__.move(4,0,2,0, self.__board__)
+        print(result)
+        self.assertEqual(
+            result, "Error en el movimiento"
+        )
+    
+    def test_salto_doble_adelante_negro(self):
+        self.__pawn__ = Pawn("BLACK")
+        self.__pawn__.__first_move__ = True
+
+        result = self.__pawn__.move(1,3,3,3, self.__board__)
+        print(result)
+        self.assertEqual(
+            result, True
+        )
+
+    def test_salto_doble_adelante_no_first_move_negro(self):
+        self.__pawn__ = Pawn("BLACK")
+        self.__pawn__.__first_move__ = True
+        self.__pawn__.move(1,6,2,6, self.__board__)
+        
+        self.__pawn__.__first_move__ = False
+        result = self.__pawn__.move(2,6,4,6, self.__board__)
+        print(result)
+        self.assertEqual(
+            result, "Error en el movimiento"
+        )
+    
 if __name__ == "__main__":
     unittest.main()
