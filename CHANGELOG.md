@@ -1,6 +1,16 @@
 # Changelog
 
-## [0.0.7] - 23-08-2024
+## [0.0.9] - 25-08-2024
+
+## Added
+
+- Se creo el ataque del peon en diagonal, con las condiciones de que solo pueda comer si el salto es de una fila y una columna de diferencia.
+
+- Se agregaron los test para comprobar el correcto funcionamiento del ataque en diagonal. 
+
+___
+
+## [0.0.8] - 24-08-2024
 
 ### Added
 
@@ -10,7 +20,9 @@
 
 - Se agregaron los test para comprobar el correcto funcionamiento del salto doble del peon.
 
-## [0.0.6] - 22-08-2024
+___
+
+## [0.0.7] - 23-08-2024
 
 ### Added
 
@@ -19,8 +31,10 @@
 - Se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
 
 - Archivo `test_pawn.py` creado.
+
 ___
-## [0.0.5] - 21-08-2024
+
+## [0.0.6] - 21-08-2024
 
 ### Added
 
@@ -33,8 +47,10 @@ ___
 ### Removed
 
 - Se borro el archivo `tablero.py`
+
 ___
-## [0.0.4] - 20-08-2024
+
+## [0.0.5] - 20-08-2024
 
 ### Changed
 
@@ -63,7 +79,19 @@ ___
 ### Removed
 
 - Se elimino las validaciones de parametros de los inputs de la funcion __"play"__ del archivo `cli.py`.
+
 ___
+
+## [0.0.4] - 19-08-2024
+
+### Added
+
+- Se crearon los test para las posiciones de las piezas en el tablero.
+
+- Archivo `test_board.py` creado.
+
+___
+
 ## [0.0.3] - 17-08-2024
 
 ### Changed
@@ -75,6 +103,7 @@ ___
 - Se agregaron las validacion de parametros de entrada que faltaban de la funcion __"move"__ (__to_row__, __to_col__) del archivo `chess.py`.
 
 ___
+
 ## [0.0.2] - 16-08-2024
 
 ### Changed
@@ -96,7 +125,6 @@ ___
 - Se crearon las funciones __"main"__ y __"play"__ y se agregaron las condiciones para que los valores ingresados en los inputs (__from_row__, __from_col__, __to_row__, __to_col__) de la funcion __"play"__ del archivo `main.py` sean mayores a 0 y menores a 7.
 
 - Archivo `board.py` creado.
-- Archivo `test_board.py` creado.
 - Archivo `rook.py` creado.
 - Archivo `pieces.py` creado.
 - Archivo `tablero.py` creado.
@@ -106,6 +134,7 @@ ___
 - Archivo `Dockerfile` creado.
 
 ___
+
 ## [0.0.1] - 14-08-2024
 
 ### Added
