@@ -30,7 +30,12 @@ class Pawn(Piece):
                     #Verifica que no tenga ninguna pieza adelante
                     if board.get_piece(from_row + direction, from_col) is None:
                         return True
-
+        # Ataque
+        if abs(from_col - to_col) == 1 and to_row == from_row + direction:
+            target_piece = board.get_piece(to_row, to_col)
+            if target_piece is not None and target_piece.__color__ != self.__color__:
+                print("Comio")
+                return True
         return False
     
     def move(self, from_row, from_col, to_row, to_col, board):
