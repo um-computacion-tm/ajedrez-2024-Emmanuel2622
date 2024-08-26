@@ -105,5 +105,32 @@ class Test_Pawn(unittest.TestCase):
             result, "Error en el movimiento"
         )
     
+    def test_ataque_diagonal(self):
+        self.__pawn_black__ = Pawn("BLACK")
+        self.__pawn__white__ = Pawn("WHITE")
+
+        self.__pawn_black__.move(1,6,3,6, self.__board__)
+
+        self.__pawn__white__.move(6,5,4,5, self.__board__)
+        result = self.__pawn__white__.move(4,5,3,6, self.__board__)
+        print(result)
+        self.assertEqual(
+            result, True
+            )
+
+    def test_ataque_diagonal_fallo(self):
+        self.__pawn_white_2__ = Pawn("WHITE")
+        self.__pawn__white__ = Pawn("WHITE")
+
+        self.__pawn_white_2__.move(6,6,4,6, self.__board__)
+
+        self.__pawn__white__.move(6,5,5,5, self.__board__)
+        result = self.__pawn__white__.move(5,5,4,6, self.__board__)
+        
+        print(result)
+        self.assertEqual(
+            result, "Error en el movimiento"
+            )
+
 if __name__ == "__main__":
     unittest.main()
