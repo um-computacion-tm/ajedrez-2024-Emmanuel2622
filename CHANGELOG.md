@@ -1,12 +1,27 @@
 # Changelog
 
+## [0.1.0] - 28-08-2024
+
+## Changed
+
+- En el archivo `chess.py`, se modificaron los return de errores.
+
+## Added
+
+- En el archivo `pieces.py` se incorporo la variable "__first_move__"
+
+- En el archivo `chess.py`, se agrego la funcion __isinstance__ y una comprobacion para verificar que el movimiento de la pieza sea __"True"__, en ese caso devuelve "__Movimiento exitoso__"
+
+- En el archivo `test_chess.py` se agregaron mas test para comprobar el correcto funcionamiento del Ajedrez
+___
+
 ## [0.0.9] - 25-08-2024
 
 ## Added
 
-- Se creo el ataque del peon en diagonal, con las condiciones de que solo pueda comer si el salto es de una fila y una columna de diferencia.
+- En el archivo `pawn.py`, se creo el ataque del peon en diagonal, con las condiciones de que solo pueda comer si el salto es de una fila y una columna de diferencia.
 
-- Se agregaron los test para comprobar el correcto funcionamiento del ataque en diagonal. 
+- En el archivo `test_pawn.py` ,se agregaron los test para comprobar el correcto funcionamiento del ataque en diagonal. 
 
 ___
 
@@ -14,11 +29,11 @@ ___
 
 ### Added
 
-- Se incorporo el segundo movimiento del peon, "Salto doble hacia adelante".
+- En el archivo `pawn.py`, se incorporo el segundo movimiento del peon, "Salto doble hacia adelante".
 
-- Se creo la variable __"first_move"__ para verificar si es el primer movimiento del peon, es caso de se _"True"_, el salto doble es valido.
+- En el archivo `pawn.py`, se creo la variable __"first_move"__ para verificar si es el primer movimiento del peon, en caso de ser _"True"_, el salto doble es valido.
 
-- Se agregaron los test para comprobar el correcto funcionamiento del salto doble del peon.
+- En el archivo `test_pawn.py`, se agregaron los test para comprobar el correcto funcionamiento del salto doble del peon.
 
 ___
 
@@ -26,9 +41,9 @@ ___
 
 ### Added
 
-- Se creo la funcion __"move"__ que toma el valor que retorna por la funcion __"type_move"__, en caso de ser __"True"__ mueve el peon a la poscion indicada.
+- En el archivo `pawn.py`, se creo la funcion __"move"__ que toma el valor que retorna por la funcion __"type_move"__, en caso de ser __"True"__ mueve el peon a la poscion indicada.
 
-- Se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
+- En el archivo `pawn.py`, se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
 
 - Archivo `test_pawn.py` creado.
 
