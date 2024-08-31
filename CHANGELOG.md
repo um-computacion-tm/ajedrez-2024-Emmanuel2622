@@ -1,12 +1,36 @@
 # Changelog
 
+## [0.1.2] - 30-08-2024
+
+### Changed
+
+- Se movio la variable "__first_move__" del archivo `pieces.py` al archivo `pawn.py` por un bug que ocasionaba.
+
+### Added
+
+- En el archivo `rook.py`, se creo el movimiento vertical de la torre del ajedrez.
+
+- Se agregaron test en `test_rook.py`.
+
+___
+
+## [0.1.1] - 29-08-2024
+
+### Added
+
+- En el archivo `rook.py`, se creo el movimiento horizontal de la torre del ajedrez.
+
+- Archivo `test_rook.py` creado.
+
+___
+
 ## [0.1.0] - 28-08-2024
 
-## Changed
+### Changed
 
 - En el archivo `chess.py`, se modificaron los return de errores.
 
-## Added
+### Added
 
 - En el archivo `pieces.py` se incorporo la variable "__first_move__"
 
@@ -17,7 +41,7 @@ ___
 
 ## [0.0.9] - 25-08-2024
 
-## Added
+### Added
 
 - En el archivo `pawn.py`, se creo el ataque del peon en diagonal, con las condiciones de que solo pueda comer si el salto es de una fila y una columna de diferencia.
 
