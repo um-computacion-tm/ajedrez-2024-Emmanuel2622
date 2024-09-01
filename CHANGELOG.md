@@ -4,6 +4,14 @@
 
 ### Changed
 
+- En el archivo `chess.py`, se realizo una simplificación de la lógica condicional eliminando la verificación de __"isinstance"__ para la clase Pawn antes de llamar al método move. Ahora se llama directamente a todos los tipos de piezas.
+
+___
+
+## [0.1.2] - 30-08-2024
+
+### Fixed
+
 - Se movio la variable "__first_move__" del archivo `pieces.py` al archivo `pawn.py` por un bug que ocasionaba.
 
 ### Added
