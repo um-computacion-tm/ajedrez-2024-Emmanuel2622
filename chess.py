@@ -27,13 +27,13 @@ class Chess:
                 raise InvalidMovePawn ("Pieza del turno incorrecto")
 
             print(f"Piece at from position: {piece}")
-            if isinstance(piece, Pawn):
-                if piece.move(from_row, from_col, to_row, to_col, self.__board__) != "Error en el movimiento":
-                    self.change_turn()
-                    return "Movimiento exitoso"
-                else:
-                    raise InvalidMovePawn("Movimiento inválido para el peón")
-
+            
+            if piece.move(from_row, from_col, to_row, to_col, self.__board__) != "Error en el movimiento":
+                self.change_turn()
+                return "Movimiento exitoso"
+            else:
+                raise InvalidMovePawn("Movimiento inválido para el peón")
+            
         except InvalidMovePawn as e:
             return f"error: {e}"
 
