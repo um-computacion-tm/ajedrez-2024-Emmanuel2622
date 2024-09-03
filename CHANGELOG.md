@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.3] - 2-09-2024
+
+### Fixed
+
+- Se modifico en el archivo `board.py` las posiciones de las piezas, ya que habian piezas mal ubicadas y eso ocasionaba un error al querer moverlas.
+
 ## [0.1.2] - 30-08-2024
 
 ### Changed
