@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.4] - 3-09-2024
+
+### Added
+
+- En el archivo `bishop.py`, Se creo la funcion __"type_move"__.
+
+__
+
 ## [0.1.3] - 2-09-2024
 
 ### Fixed
