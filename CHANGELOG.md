@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.5] - 3-09-2024
+
+### Fixed
+
+- Se arreglo las posciones de la pieza Bishop y Knight.
+
 ## [0.1.4] - 3-09-2024
 
 ### Added
