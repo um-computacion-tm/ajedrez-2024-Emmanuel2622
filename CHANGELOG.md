@@ -1,48 +1,244 @@
 # Changelog
 
-## [0.0.4] - 20-08-2024
+## [0.1.6] - 10-9-2024
+
+### Changed
+
+- En el archivo `bishop.py` se cambio la forma de verificar las casillas antes del movimiento.
+
+- Se arreglo el test del archivo `board.py`.
+
+### Added
+
+- Se crearon los test para la pieza __bishop__. 
+
+- Archivo `test_bishop.py` creado.
+
+## [0.1.5] - 8-09-2024
+
+### Fixed
+
+- Se arreglo las posciones de la pieza Bishop y Knight.
+
+## [0.1.4] - 3-09-2024
+
+### Added
+
+- En el arcvivo `bishop.py`, se creo la funcion __"move"__.
+___
+
+## [0.1.4] - 3-09-2024
+
+### Added
+
+- En el archivo `bishop.py`, Se creo la funcion __"type_move"__.
+
+___
+
+## [0.1.3] - 2-09-2024
+
+### Fixed
+
+- Se modifico en el archivo `board.py` las posiciones de las piezas, ya que habian piezas mal ubicadas y eso ocasionaba un error al querer moverlas.
+
+## [0.1.2] - 30-08-2024
+
+### Changed
+
+- En el archivo `chess.py`, se realizo una simplificación de la lógica condicional eliminando la verificación de __"isinstance"__ para la clase Pawn antes de llamar al método move. Ahora se llama directamente a todos los tipos de piezas.
+
+___
+
+## [0.1.2] - 30-08-2024
+
+### Fixed
+
+- Se movio la variable "__first_move__" del archivo `pieces.py` al archivo `pawn.py` por un bug que ocasionaba.
+
+### Added
+
+- En el archivo `rook.py`, se creo el movimiento vertical de la torre del ajedrez.
+
+- Se agregaron test en `test_rook.py`.
+
+___
+
+## [0.1.1] - 29-08-2024
+
+### Added
+
+- En el archivo `rook.py`, se creo el movimiento horizontal de la torre del ajedrez.
+
+- Archivo `test_rook.py` creado.
+
+___
+
+## [0.1.0] - 28-08-2024
+
+### Changed
+
+- En el archivo `chess.py`, se modificaron los return de errores.
+
+### Added
+
+- En el archivo `pieces.py` se incorporo la variable "__first_move__"
+
+- En el archivo `chess.py`, se agrego la funcion __isinstance__ y una comprobacion para verificar que el movimiento de la pieza sea __"True"__, en ese caso devuelve "__Movimiento exitoso__"
+
+- En el archivo `test_chess.py` se agregaron mas test para comprobar el correcto funcionamiento del Ajedrez
+___
+
+## [0.0.9] - 25-08-2024
+
+### Added
+
+- En el archivo `pawn.py`, se creo el ataque del peon en diagonal, con las condiciones de que solo pueda comer si el salto es de una fila y una columna de diferencia.
+
+- En el archivo `test_pawn.py` ,se agregaron los test para comprobar el correcto funcionamiento del ataque en diagonal. 
+
+___
+
+## [0.0.8] - 24-08-2024
+
+### Added
+
+- En el archivo `pawn.py`, se incorporo el segundo movimiento del peon, "Salto doble hacia adelante".
+
+- En el archivo `pawn.py`, se creo la variable __"first_move"__ para verificar si es el primer movimiento del peon, en caso de ser _"True"_, el salto doble es valido.
+
+- En el archivo `test_pawn.py`, se agregaron los test para comprobar el correcto funcionamiento del salto doble del peon.
+
+___
+
+## [0.0.7] - 23-08-2024
+
+### Added
+
+- En el archivo `pawn.py`, se creo la funcion __"move"__ que toma el valor que retorna por la funcion __"type_move"__, en caso de ser __"True"__ mueve el peon a la poscion indicada.
+
+- En el archivo `pawn.py`, se creo la funcion __"type_move"__ la cual valida si el movimiento es posible, luego se incorporo el primer movimiento de la pieza Pawn "Salto simple hacia adelate".
+
+- Archivo `test_pawn.py` creado.
+
+___
+
+## [0.0.6] - 21-08-2024
+
+### Added
+
+- Se agregaro la funcion __"str"__ a todas las piezas del ajedrez y se colocaron sus respectivas figuras.
+
+- Se crearon las clases de excepciones dentro del archivo `exceptions.py`
+
+- Archivo `exceptions.py` creado.
 
 ### Removed
 
-- Se elimino la comprobacion de los valores ingresados en los inputs de la funcion play.
+- Se borro el archivo `tablero.py`
 
-## Added
+___
 
-- Se crearon las class knight, king, queen, bishop. Y se agrego en el archivo board.py sus posiciones.
+## [0.0.5] - 20-08-2024
 
-- Se le agrego la funcion "__str__" a la class Rock, con una comprobacion del color de la posicion para asignarle el color a su figura. Tambien se le agrego la funcion "__str__" a la class Board
+### Changed
+
+- Se modifico el nombre del archivo `main.py` por `cli.py` 
+
+- Se modifico el nombre del archivo `test_main.py` por `test_cli.py`
+
+### Added
+
+- Se creo la funcion __"show_board"__ dentro de la clase __Chess__.
+
+- Se creo la clase __knight__.
+- Se creo la clase __king__.
+- Se creo la clase __queen__.
+- Se creo la clase __bishop__.
+
+- Dentro de la clase __Board__, Se agregaron las posiciones de las piezas faltantes y se creo la funcion __"str"__ que imprime el tablero con sus piezas.
+
+- Se agrgo la funcion __"str"__ a la clase __Rook__ que devuelve el color de la pieza.
+
+- Archivo `queen.py` creado.
+- Archivo `king.py` creado.
+- Archivo `knight.py` creado.
+- Archivo `bishop.py` creado.
+ 
+### Removed
+
+- Se elimino las validaciones de parametros de los inputs de la funcion __"play"__ del archivo `cli.py`.
+
+___
+
+## [0.0.4] - 19-08-2024
+
+### Added
+
+- Se crearon los test para las posiciones de las piezas en el tablero.
+
+- Archivo `test_board.py` creado.
+
+___
 
 ## [0.0.3] - 17-08-2024
 
 ### Changed
 
-- Se modifico los return de las comprobaciones de las entradas que espera la funcion mov del archivo chess.py.
+- Se modifco las validacion de parametros de las entradas de la funcion __"move"__ del archivo `chess.py`.
 
 ### Added 
 
-- Se agrego las comprobaciones de que los valores igresados en (to_row, to_col) de la funcion mov del archivo chess.py sean mayores a 0 y menores a 7.
+- Se agregaron las validacion de parametros de entrada que faltaban de la funcion __"move"__ (__to_row__, __to_col__) del archivo `chess.py`.
+
+___
 
 ## [0.0.2] - 16-08-2024
 
 ### Changed
 
-- Se modifico el str que devuelve el return de las lineas 12, 14
+- En el archivo `Chess.py` se modifico la forma de llamar la clase __Board__ en la funcion __"init"__ de la clase __Chess__, y los "string" que devuelven los __return__ de las validacion de parametros de las entradas de la funcion __"move"__.
 
 ### Added
 
-- Se agrego las comprobaciones de que los valores ingresados en los inputs (from_row, from_col, to_row, to_col) de la funcion play del archivo main.py sean mayores a 0 y menores a 7.
+- Se creo la funcion __"turn"__ en la clase __Chess__ del archivo `chess.py`.
 
-- Se agrego la funcion turn
+- Se creo la clase __Board__ en el archivo `board.py`, tambien se creo las funciones __"init"__ que contiene un bucle para la creacion del tablero y agregar las piezas __Rook__ en sus posiciones iniciales, y la funcion __"get_piece"__ que devuelve la posicion del la pieza ingresada en los parametros.
 
-- Se crearon los archivos rook.py, pieces.py, tablero.py, pawn.py
+- Se creo la clase __Pawn__ en el archivo `pawn.py`.
 
-### Fixed
+- Se creo la clase __Pieces__ en el archivo `pieces.py`.
 
-- En el archivo Chess.py se arreglo la forma de llamar a la clase board en la linea 5.
+- Se creo la clase __Rook__ en el archivo `rook.py`.
 
+- Se crearon las funciones __"main"__ y __"play"__ y se agregaron las condiciones para que los valores ingresados en los inputs (__from_row__, __from_col__, __to_row__, __to_col__) de la funcion __"play"__ del archivo `main.py` sean mayores a 0 y menores a 7.
 
-## [0.0.1] - 15-08-2024
+- Archivo `board.py` creado.
+- Archivo `rook.py` creado.
+- Archivo `pieces.py` creado.
+- Archivo `tablero.py` creado.
+- Archivo `pawn.py` creado.
+- Archivo `main.py` creado.
+- Archivo `test_main.py` creado.
+- Archivo `Dockerfile` creado.
+
+___
+
+## [0.0.1] - 14-08-2024
 
 ### Added
 
-- Se agrego las comprobaciones de que los valores ingresados en (from_row, from_col) de la funcion mov del archivo chess.py sean mayores a 0 y menores a 7.
+- Se creo la clase __Chess__ y se le agrego las funciones __"move"__, __"init"__ y "__change_turn__", tambien se agregaron las condiciones para los parametros que espera la funcion __"move"__, en el archivo `chess.py`.
+
+- Se crearon los test que evaluan las validacion de los parametros ingresados en la funcion __"move"__ `chess.py`.
+
+- Archivo `CHANGELOG.md` creado.
+- Archivo `Readme.md` creado.
+- Archivo `.coveragerc` creado.
+- Archivo `.gitignore` creado.
+- Archivo `.codeclimate.yml` creado.
+- Carpeta `.circle` creada.
+- Archivo `.circle/.config.yml` creado.
+- Archivo `chess.py` creado.
+- Archivo `test_chess.py` creado.
+- Archivo `Requirements.txt` creado.
+

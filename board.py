@@ -28,24 +28,24 @@ class Board:
             self.__positions__[6][i] = Pawn("WHITE")
 
         #Posicion de Knight
-        self.__positions__[0][2] = Knight("BLACK")
-        self.__positions__[7][5] = Knight("BLACK")
-        self.__positions__[7][2] = Knight("WHITE")        
-        self.__positions__[0][5] = Knight("WHITE")
+        self.__positions__[0][6] = Knight("BLACK")
+        self.__positions__[0][1] = Knight("BLACK")
+        self.__positions__[7][6] = Knight("WHITE")
+        self.__positions__[7][1] = Knight("WHITE")        
 
         #Posicion de Bishop
-        self.__positions__[7][1] = Bishop("BLACK")
-        self.__positions__[0][6] = Bishop("BLACK")
-        self.__positions__[0][1] = Bishop("WHITE")
-        self.__positions__[7][6] = Bishop("WHITE")
+        self.__positions__[0][5] = Bishop("BLACK")
+        self.__positions__[0][2] = Bishop("BLACK")
+        self.__positions__[7][5] = Bishop("WHITE")
+        self.__positions__[7][2] = Bishop("WHITE")
 
         #Posicion de Queen
-        self.__positions__[0][3] = Queen("WHITE")
-        self.__positions__[7][3] = Queen("BLACK")
+        self.__positions__[0][3] = Queen("BLACK")
+        self.__positions__[7][3] = Queen("WHITE")
 
         #Posicion de King
-        self.__positions__[0][4] = King("WHITE")
-        self.__positions__[7][4] = King("BLACK")
+        self.__positions__[0][4] = King("BLACK")
+        self.__positions__[7][4] = King("WHITE")
 
     def __str__(self):
         board_str = ""
