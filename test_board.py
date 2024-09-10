@@ -10,7 +10,7 @@ class Test_Board(unittest.TestCase):
         self.assertEqual(
             str(board),
             (
-                "♜♝♞♛♚♞♝♜\n"
+                "♜♞♝♛♚♝♞♜\n"
 
                 "♟♟♟♟♟♟♟♟\n"
 
@@ -24,7 +24,7 @@ class Test_Board(unittest.TestCase):
 
                 "♙♙♙♙♙♙♙♙\n"
 
-                "♖♗♘♕♔♘♗♖\n"
+                "♖♘♗♕♔♗♘♖\n"
             )
         )
     
