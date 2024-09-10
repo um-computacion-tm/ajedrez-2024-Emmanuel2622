@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.1.6] - 10-9-2024
+
+### Changed
+
+- En el archivo `bishop.py` se cambio la forma de verificar las casillas antes del movimiento.
+
+- Se arreglo el test del archivo `board.py`.
+
+### Added
+
+- Se crearon los test para la pieza __bishop__. 
+
+- Archivo `test_bishop.py` creado.
+
 ## [0.1.5] - 8-09-2024
 
 ### Fixed
