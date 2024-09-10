@@ -18,23 +18,29 @@ class Bishop(Piece):
                 col_step = 1
             else:
                 col_step = -1
+            
+            
+            # Verifica que no haya piezas en el camino
+            row = from_row + row_step
+            col = from_col + col_step
+            while row != to_row and col != to_col:
+                if board.get_piece(row, col) is not None:
+                    return False
+                row += row_step
+                col += col_step
+                
+            # Verifica si hay una pieza en el destino y si es de otro color
+            if board.get_piece(to_row, to_col) is not None and board.get_piece(to_row, to_col).__color__ == self.__color__:
+                return False
 
-            #Verifica que no haya piezas en el la fila
-            for col in range(from_col + col_step, to_col, col_step):
-                for row in range(from_row + row_step, to_row, row_step):
-                    if board.get_piece(row, col) is not None:
-                        return False
-                    
-            #Verifica que en el destino no haya piezas y si hay que sean de otro color
-            if board.get_piece(to_row, to_col) is None or board.get_piece(to_row, to_col).__color__ != self.__color__: 
-                return True
-                    
+            return True    
         return False
 
     def move(self, from_row, from_col, to_row, to_col, board):
         if self.type_move(from_row, from_col, to_row, to_col, board):
             board.__positions__[to_row][to_col] = board.__positions__[from_row][from_col]
             board.__positions__[from_row][from_col] = None
+            print("Se movio")
             return True
         else:
             return "Error en el movimiento"
