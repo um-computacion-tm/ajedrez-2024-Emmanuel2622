@@ -22,6 +22,7 @@ class Pawn(Piece):
             #Verifica que no tenga ninguna pieza adelante
             if board.get_piece(to_row, to_col) is None:
                 print("salto")
+                self.__first_move__ = False
                 return True
 
         # Validacion movimiento doble hacia adelante    
@@ -31,20 +32,13 @@ class Pawn(Piece):
                 if (self.__color__ == "WHITE" and from_row == 6) or (self.__color__ == "BLACK" and from_row == 1):
                     #Verifica que no tenga ninguna pieza adelante
                     if board.get_piece(from_row + direction, from_col) is None:
+                        self.__first_move__ = False
                         return True
         # Ataque
         if abs(from_col - to_col) == 1 and to_row == from_row + direction:
             target_piece = board.get_piece(to_row, to_col)
             if target_piece is not None and target_piece.__color__ != self.__color__:
                 print("Comio")
+                self.__first_move__ = False
                 return True
         return False
-    
-    def move(self, from_row, from_col, to_row, to_col, board):
-        if self.type_move(from_row, from_col, to_row, to_col, board):
-            board.__positions__[to_row][to_col] = board.__positions__[from_row][from_col]
-            board.__positions__[from_row][from_col] = None
-            self.__first_move__ = False
-            return True
-        else:
-            return "Error en el movimiento"

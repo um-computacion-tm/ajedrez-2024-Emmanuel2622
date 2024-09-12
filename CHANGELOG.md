@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.7] - 11-9-2024
+
+### Changed
+
+- Se movio la funcion __"move"__ al archivo `pieces.py`.
+
+___
+
 ## [0.1.6] - 10-9-2024
 
 ### Changed
@@ -13,6 +21,8 @@
 - Se crearon los test para la pieza __bishop__. 
 
 - Archivo `test_bishop.py` creado.
+
+___
 
 ## [0.1.5] - 8-09-2024
 
