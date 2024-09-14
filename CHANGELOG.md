@@ -1,4 +1,11 @@
 # Changelog
+## [0.1.8] - 13-9-2024
+
+### Added
+
+- Se creo el movimiento vertical de la pieza __king__. 
+
+___
 
 ## [0.1.7] - 11-9-2024
 
