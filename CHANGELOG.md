@@ -1,9 +1,18 @@
 # Changelog
+
+## [0.1.9] - 15-9-2024
+
+### Changed
+
+- Se paso la verificacion que tenian las piezas para saber si el destino tenia una pieza y era del mimso color, al archivo `pieces.py`.
+
+___
+
 ## [0.1.8] - 13-9-2024
 
 ### Added
 
-- Se creo el movimiento vertical de la pieza __king__. 
+- Se creo el movimiento de la pieza __king__. 
 
 ___
 

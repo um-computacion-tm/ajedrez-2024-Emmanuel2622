@@ -6,6 +6,9 @@ source =
     knight
     board
     pawn
+    rook
+    queen
+    king
 omit =
     venv/*
     */test*
