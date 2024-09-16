@@ -36,7 +36,7 @@ class Test_King(unittest.TestCase):
         self.assertEqual(result, True)
         print(self.__board__.__str__())
 
-    def test_move_vertical_good(self):
+    def test_move_vertical_bad(self):
         self.__board__= Board()
         self.__king__ = King("WHITE")
 
