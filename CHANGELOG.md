@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.2.0] - 16-9-2024
+
+### Added
+
+- Archivo `test_king.py` creado mas los test para la pieza __King__.
+
 ## [0.1.9] - 15-9-2024
 
 ### Changed
