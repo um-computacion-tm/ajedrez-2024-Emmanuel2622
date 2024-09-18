@@ -1,12 +1,9 @@
 from pieces import Piece
 
 class Rook(Piece):
-    def __str__(self):
-        if self.__color__ == "WHITE":
-                return "♖"
-        else:
-             return "♜"
-     
+    white_str = "♖"
+    black_str = "♜"
+    
     def type_move(self, from_row, from_col, to_row, to_col, board):
         #Verificamos la direccion del movimiento
         if to_col > from_col or to_row > from_row:
