@@ -1,10 +1,28 @@
 # Changelog
 
+## [0.2.1] - 17-9-2024
+
+### Added
+
+- Se creo los movimientos del la pieza __Queen__.
+
+### Changed
+
+- Se modificaron las exceptions.
+
+- Se movio al archivo `pieces.py` la asignacion de color de las piezas. 
+
+- Se modifico la condicion del movimiento del la pieza __King__ para que pueda moverse en diagonal.
+
+___
+
 ## [0.2.0] - 16-9-2024
 
 ### Added
 
 - Archivo `test_king.py` creado mas los test para la pieza __King__.
+
+___
 
 ## [0.1.9] - 15-9-2024
 

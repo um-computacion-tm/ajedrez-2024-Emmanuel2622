@@ -9,6 +9,7 @@ source =
     rook
     queen
     king
+    pieces
 omit =
     venv/*
     */test*
