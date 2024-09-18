@@ -1,12 +1,9 @@
 from pieces import Piece
 
 class Bishop(Piece):
-    def __str__(self):
-        if self.__color__ == "WHITE":
-                return "♗"
-        else:
-             return "♝"
-        
+    white_str = "♗"
+    black_str = "♝"
+    
     def type_move(self, from_row, from_col, to_row, to_col, board):
         if self.color_igual(from_row, from_col,to_row, to_col, board):
             if abs(to_row - from_row) == abs(to_col - from_col):

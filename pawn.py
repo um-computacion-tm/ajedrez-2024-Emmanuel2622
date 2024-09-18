@@ -5,12 +5,9 @@ class Pawn(Piece):
         super().__init__(color)
         self.__first_move__ = True
     
-    def __str__(self):
-        if self.__color__ == "WHITE":
-                return "♙"
-        else:
-             return "♟"
-
+    white_str = "♙"
+    black_str = "♟"
+    
     def type_move(self, from_row, from_col, to_row, to_col, board):
         if self.__color__ == "WHITE":
             direction = -1
