@@ -9,28 +9,28 @@ class Test_Chess(unittest.TestCase):
         result = self.__chess__.move(0,8,0,0)
         print(result)
         self.assertEqual(
-            result, "error: value from_col, fuera rango"
+            result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_to_col(self):
         result = self.__chess__.move(3,4,1,-6)
         print(result)
         self.assertEqual(
-            result, "error: value to_col, fuera rango"
+            result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_from_row(self):
         result = self.__chess__.move(9,2,0,0)
         print(result)
         self.assertEqual(
-            result, "error: value from_row, fuera rango"
+            result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_to_row(self):
         result = self.__chess__.move(5,2,9,0)
         print(result)
         self.assertEqual(
-            result, "error: value to_row, fuera rango"
+            result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_pass(self):
@@ -44,7 +44,7 @@ class Test_Chess(unittest.TestCase):
         result = self.__chess__.move(0,"hola",0,0)
         print(result)
         self.assertEqual(
-            result, "error: no se ingreso un valor numerico"
+            result, "error: Valor no Numerico"
         )    
 
     def test_change_turn_black(self):
@@ -69,19 +69,19 @@ class Test_Chess(unittest.TestCase):
         result = self.__chess__.move(4,0,5,0)
         print(result)
         self.assertEqual(
-            result, "error: No hay pieza en la posición de origen"
+            result, "error: La posicion esta vacia"
         )
 
     def test_move_turno_incorrecto(self):
         result = self.__chess__.move(1,0,2,0)
         self.assertEqual(
-            result, "error: Pieza del turno incorrecto"
+            result, "error: No puede mover una pieza de otro jugador"
         )
     
     def test_move_piece_pawn_invalid(self):
         result = self.__chess__.move(6,0,5,3)
         self.assertEqual(
-            result, "error: Movimiento inválido para el peón"
+            result, "error: Movimiento de pieza Invalido"
         )
 if __name__ == "__main__":
     unittest.main()
