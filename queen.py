@@ -31,13 +31,11 @@ class Queen(Piece):
                         return False
                     
             if abs(to_row - from_row) == abs(to_col - from_col):
-                print("paso 1")
                 row = from_row + row_step
                 col = from_col + col_step
                 while row != to_row and col != to_col:
-                        print("paso 2")
                         if board.get_piece(row, col) is not None:
-                            print("paso 3")
+                            print("casu")
                             return False
                         row += row_step
                         col += col_step
