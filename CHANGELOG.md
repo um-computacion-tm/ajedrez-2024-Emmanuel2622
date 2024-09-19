@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.2] - 18-9-2024
+
+### Added
+
+- Archivo `test_queen.py` creado con los test de la pieza __Queen__.
+
+___
+
 ## [0.2.1] - 17-9-2024
 
 ### Added
