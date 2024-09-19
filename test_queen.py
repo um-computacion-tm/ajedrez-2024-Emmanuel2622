@@ -68,4 +68,6 @@ class Test_Queen(unittest.TestCase):
         
         result = self.__Queen__.move(7,3,7,2, self.__board__)
         self.assertEqual(result, "Error en el movimiento")
-    
+
+if __name__ == "__main__":
+    unittest.main()
