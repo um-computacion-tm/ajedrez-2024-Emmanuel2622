@@ -2,6 +2,14 @@
 
 ## [0.2.2] - 18-9-2024
 
+### Changed
+
+- Se simplifico los test de las piezas para no repetir codigo.
+
+___
+
+## [0.2.2] - 18-9-2024
+
 ### Added
 
 - Archivo `test_queen.py` creado con los test de la pieza __Queen__.
