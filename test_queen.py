@@ -63,11 +63,16 @@ class Test_Queen(unittest.TestCase):
         
         result = self.__Queen__.move(6,3,4,5, self.__board__)
         self.assertEqual(result, "Error en el movimiento")
-    
-    def test_move_diagonal_bad2(self):
+
+    def test_move_diagonal_blocked(self):
+        self.__Queen__.move(7, 3, 5, 3, self.__board__)
         
-        result = self.__Queen__.move(7,3,7,2, self.__board__)
-        self.assertEqual(result, "Error en el movimiento")
+        self.__pawn_white__.move(6, 2, 5, 2, self.__board__)
+        result = self.__Queen__.move(5, 3, 2, 0, self.__board__)
+        self.assertEqual(result, True)
+        print(self.__board__.__str__(),"test")
+        
+
 
 if __name__ == "__main__":
     unittest.main()
