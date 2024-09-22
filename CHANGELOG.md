@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.2.4] - 21-9-2024
+
+### Changed
+
+- Se modifico el metodo de verificaicon del movimiento de la pieza en el archivo `chess.py`.
+
+- Se agrego un test en el archivo `test_queen.py`, para cubrir el 100%.
+
+___
+
 ## [0.2.3] - 19-9-2024
 
 ### Changed
