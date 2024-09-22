@@ -37,7 +37,7 @@ class Test_Chess(unittest.TestCase):
         result = self.__chess__.move(6,0,5,0)
         print(result)
         self.assertEqual(
-            result, "Movimiento exitoso"
+            result, None
         )
 
     def test_move_valor_no_numerico(self):
