@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.5] - 23-9-2024
+
+### Changed
+
+- Se elimino la repeticion de codigo de las piezas y se pasaron los movimientos al archivo `pieces.py`.
+
+___
+
 ## [0.2.4] - 21-9-2024
 
 ### Changed
