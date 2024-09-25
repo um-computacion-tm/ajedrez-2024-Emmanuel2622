@@ -28,11 +28,11 @@ class Chess:
 
             print(f"Piece at from position: {piece}")
             
-            if piece.move(from_row, from_col, to_row, to_col, self.__board__) == "Error en el movimiento":
+            if piece.move(from_row, from_col, to_row, to_col, self.__board__) != "Error en el movimiento":
+                self.change_turn()    
+            else:
                 raise InvalidMove
             
-            piece.move(from_row, from_col, to_row, to_col, self.__board__)
-            self.change_turn()
             
         except InvalidMove as e:
             return f"error: {e}"
