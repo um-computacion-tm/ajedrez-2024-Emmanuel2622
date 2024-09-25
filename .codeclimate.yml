@@ -46,6 +46,7 @@ exclude_patterns:
 - "db/"
 - "dist/"
 - "features/"
+- "test_*"
 - "venv/"
 - "**/tests/"
 - "**/vendor/"

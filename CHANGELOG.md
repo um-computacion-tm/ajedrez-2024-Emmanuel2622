@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.6] - 24-9-2024
+
+### Added
+
+- Se agregaron las variables __horizontal__, __vertical__, __diagonal__ a las piezas para validar sus tipos de movimientos.
+
+### Fixed
+
+- Se arreglo un error en la ejecucion del metodo __move__ en el archivo `chess.py`, ya que se llamaba dos veces al metodo y eso ocasionaba un error.
+
+### Changed
+
+- Se arreglo el test: __test_move_diagonal_good__. Del archivo `test_queen.py`.
+___
+
 ## [0.2.5] - 23-9-2024
 
 ### Changed
