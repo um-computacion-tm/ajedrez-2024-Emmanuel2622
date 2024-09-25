@@ -41,7 +41,7 @@ class Test_Queen(unittest.TestCase):
     def test_move_diagonal_good(self):
         self.__Queen__.move(7,3,5,3, self.__board__)
         
-        result = self.__Queen__.move(5,3,2,2, self.__board__)
+        result = self.__Queen__.move(5,3,3,1, self.__board__)
         self.assertEqual(result, True)
 
     def test_move_vertical_bad(self):
