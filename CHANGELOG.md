@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.7] - 26-9-2024
+
+### Changed
+
+- Se pasaron los __test__ a la carpeta `Test`, y se agregaron mas test en el archivo `test_rook.py` y `test_queen.py`.
+
+- Se pasasron los archivos del Juego a la carpeta `Game` .
+
+### Added
+
+- Carpeta `Game` creada.
+
+- Carpeta `Test` creada.
+___
+
 ## [0.2.6] - 24-9-2024
 
 ### Added
