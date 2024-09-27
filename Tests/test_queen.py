@@ -1,7 +1,7 @@
 import unittest
-from queen import Queen
-from pawn import Pawn
-from board import *
+from Game.queen import Queen
+from Game.pawn import Pawn
+from Game.board import *
 
 class Test_Queen(unittest.TestCase):
     def setUp(self):
@@ -72,7 +72,11 @@ class Test_Queen(unittest.TestCase):
         self.assertEqual(result, True)
         print(self.__board__.__str__(),"test")
         
-
+    def test_is_same_color(self):
+        result = self.__Queen__.move(7, 3, 7, 2, self.__board__)
+        self.assertEqual(result, 'Error en el movimiento')
+        print(self.__board__.__str__(),"test")
+        
 
 if __name__ == "__main__":
     unittest.main()

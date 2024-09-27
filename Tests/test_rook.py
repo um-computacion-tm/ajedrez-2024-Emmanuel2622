@@ -1,7 +1,7 @@
 import unittest
-from rook import Rook
-from pawn import Pawn
-from board import Board
+from Game.rook import Rook
+from Game.pawn import Pawn
+from Game.board import Board
 
 class Test_Rook(unittest.TestCase):
     def setUp(self):
@@ -51,6 +51,11 @@ class Test_Rook(unittest.TestCase):
         self.__pawn_black__.move(2,1,3,1,self.__board__)
 
         result = self.__rook__.move(5,0,5,3, self.__board__)
+        self.assertEqual(result, 'Error en el movimiento')
+        print(self.__board__.__str__())
+
+    def test_is_same_color(self):
+        result = self.__rook__.move(7,0,7,1, self.__board__)
         self.assertEqual(result, 'Error en el movimiento')
         print(self.__board__.__str__())
 if __name__ == "__main__":
