@@ -1,5 +1,5 @@
-from board import *
-from exceptions import *
+from Game.board import *
+from Game.exceptions import *
 
 class Chess:
     def __init__(self):
@@ -10,39 +10,41 @@ class Chess:
     def move(self, from_row, from_col, to_row, to_col,):
         try:
             if not all(isinstance(x, int) for x in [from_row, from_col, to_row, to_col]):
-                raise ValueError("no se ingreso un valor numerico")
+                raise ValueError("Valor no Numerico")
             if from_row < 0 or from_row > 7:
-                raise ValueError("value from_row, fuera rango")
+                raise OutOfBoard
             if from_col < 0 or from_col > 7:
-                raise ValueError("value from_col, fuera rango")
+                raise OutOfBoard
             if to_row < 0 or to_row > 7:
-                raise ValueError("value to_row, fuera rango")
+                raise OutOfBoard
             if to_col < 0 or to_col > 7:
-                raise ValueError("value to_col, fuera rango")
+                raise OutOfBoard
             
             piece = self.__board__.get_piece(from_row, from_col)
             if piece is None:
-                 raise InvalidMovePiece("No hay pieza en la posición de origen")
+                raise EmptyPosition
             if piece.__color__ != self.__turn__:
-                raise InvalidMovePawn ("Pieza del turno incorrecto")
+                raise InvalidTurn
 
             print(f"Piece at from position: {piece}")
             
             if piece.move(from_row, from_col, to_row, to_col, self.__board__) != "Error en el movimiento":
-                self.change_turn()
-                return "Movimiento exitoso"
+                self.change_turn()    
             else:
-                raise InvalidMovePawn("Movimiento inválido para el peón")
+                raise InvalidMove
             
-        except InvalidMovePawn as e:
+            
+        except InvalidMove as e:
             return f"error: {e}"
 
-        except InvalidMovePiece as e:
+        except EmptyPosition as e:
             return f"error: {e}"
 
+        except OutOfBoard as e:
+            return f"error: {e}"
+        
         except ValueError as e:
             return f"error: {e}"
-
     
     @property        
     def turn(self):

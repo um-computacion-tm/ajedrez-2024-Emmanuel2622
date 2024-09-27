@@ -1,5 +1,109 @@
 # Changelog
 
+## [0.2.7] - 26-9-2024
+
+### Changed
+
+- Se pasaron los __test__ a la carpeta `Test`, y se agregaron mas test en el archivo `test_rook.py` y `test_queen.py`.
+
+- Se pasasron los archivos del Juego a la carpeta `Game` .
+
+### Added
+
+- Carpeta `Game` creada.
+
+- Carpeta `Test` creada.
+___
+
+## [0.2.6] - 24-9-2024
+
+### Added
+
+- Se agregaron las variables __horizontal__, __vertical__, __diagonal__ a las piezas para validar sus tipos de movimientos.
+
+### Fixed
+
+- Se arreglo un error en la ejecucion del metodo __move__ en el archivo `chess.py`, ya que se llamaba dos veces al metodo y eso ocasionaba un error.
+
+### Changed
+
+- Se arreglo el test: __test_move_diagonal_good__. Del archivo `test_queen.py`.
+___
+
+## [0.2.5] - 23-9-2024
+
+### Changed
+
+- Se elimino la repeticion de codigo de las piezas y se pasaron los movimientos al archivo `pieces.py`.
+
+___
+
+## [0.2.4] - 21-9-2024
+
+### Changed
+
+- Se modifico el metodo de verificaicon del movimiento de la pieza en el archivo `chess.py`.
+
+- Se agrego un test en el archivo `test_queen.py`, para cubrir el 100%.
+
+___
+
+## [0.2.3] - 19-9-2024
+
+### Changed
+
+- Se simplifico los test de las piezas para no repetir codigo.
+
+___
+
+## [0.2.2] - 18-9-2024
+
+### Added
+
+- Archivo `test_queen.py` creado con los test de la pieza __Queen__.
+
+___
+
+## [0.2.1] - 17-9-2024
+
+### Added
+
+- Se creo los movimientos del la pieza __Queen__.
+
+### Changed
+
+- Se modificaron las exceptions.
+
+- Se movio al archivo `pieces.py` la asignacion de color de las piezas. 
+
+- Se modifico la condicion del movimiento del la pieza __King__ para que pueda moverse en diagonal.
+
+___
+
+## [0.2.0] - 16-9-2024
+
+### Added
+
+- Archivo `test_king.py` creado mas los test para la pieza __King__.
+
+___
+
+## [0.1.9] - 15-9-2024
+
+### Changed
+
+- Se paso la verificacion que tenian las piezas para saber si el destino tenia una pieza y era del mimso color, al archivo `pieces.py`.
+
+___
+
+## [0.1.8] - 13-9-2024
+
+### Added
+
+- Se creo el movimiento de la pieza __king__. 
+
+___
+
 ## [0.1.7] - 11-9-2024
 
 ### Changed

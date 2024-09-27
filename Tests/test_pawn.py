@@ -1,6 +1,6 @@
 import unittest
-from pawn import Pawn
-from board import *
+from Game.pawn import Pawn
+from Game.board import *
 
 class Test_Pawn(unittest.TestCase):
     def setUp(self):

@@ -1,15 +1,16 @@
 import unittest
-from bishop import Bishop
-from pawn import Pawn
-from board import *
+from Game.bishop import Bishop
+from Game.pawn import Pawn
+from Game.board import *
 
-class Test_Bishop(unittest.TestCase):    
-    def test_move_good(self):
+class Test_Bishop(unittest.TestCase):   
+    def setUp(self):
         self.__board__ = Board()
         self.__pawn__white__ = Pawn("WHITE")
         self.__pawn__black__ = Pawn("BLACK")
         self.__bishop__ = Bishop("WHITE")
 
+    def test_move_good(self):
         self.__pawn__white__.move(6, 3, 4, 3, self.__board__)
         self.__pawn__black__.move(1, 0, 3, 0, self.__board__)
         
@@ -19,11 +20,6 @@ class Test_Bishop(unittest.TestCase):
         print(self.__board__.__str__())
 
     def test_move_good_2(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("WHITE")
-
         self.__pawn__white__.move(6, 1, 4, 1, self.__board__)
         self.__pawn__black__.move(1, 0, 3, 0, self.__board__)
         
@@ -32,11 +28,6 @@ class Test_Bishop(unittest.TestCase):
         print(self.__board__.__str__())
 
     def test_move_good_3(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("BLACK")
-
         self.__pawn__white__.move(6, 0, 4, 0, self.__board__)
         self.__pawn__black__.move(1, 3, 2, 3, self.__board__)
         self.__pawn__white__.move(4, 1, 5, 1, self.__board__)
@@ -46,11 +37,6 @@ class Test_Bishop(unittest.TestCase):
         print(self.__board__.__str__())
 
     def test_move_bad(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("WHITE")
-
         self.__pawn__white__.move(6, 2, 4, 2, self.__board__)
         self.__pawn__black__.move(1, 0, 3, 0, self.__board__)
         
@@ -59,11 +45,6 @@ class Test_Bishop(unittest.TestCase):
         print(self.__board__.__str__())
 
     def test_move_bad_2(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("WHITE")
-
         self.__pawn__white__.move(6, 2, 4, 2, self.__board__)
         self.__pawn__black__.move(1, 0, 3, 0, self.__board__)
         
@@ -73,11 +54,6 @@ class Test_Bishop(unittest.TestCase):
 
 
     def test_move_bad_3(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("WHITE")
-
         self.__pawn__white__.move(6, 2, 4, 2, self.__board__)
         self.__pawn__black__.move(1, 0, 3, 0, self.__board__)
         
@@ -86,11 +62,6 @@ class Test_Bishop(unittest.TestCase):
         print(self.__board__.__str__())
         
     def test_atack(self):
-        self.__board__ = Board()
-        self.__pawn__white__ = Pawn("WHITE")
-        self.__pawn__black__ = Pawn("BLACK")
-        self.__bishop__ = Bishop("WHITE")
-
         self.__pawn__white__.move(6, 3, 4, 3, self.__board__)
         self.__pawn__black__.move(1, 7, 2, 7, self.__board__)
         
@@ -98,3 +69,5 @@ class Test_Bishop(unittest.TestCase):
         self.assertEqual(result, True)
         print(self.__board__.__str__())
         
+if __name__ == "__main__":
+    unittest.main()

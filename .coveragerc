@@ -1,11 +1,6 @@
 [run]
 source =
-    cli
-    chess
-    bishop
-    knight
-    board
-    pawn
+    Game
 omit =
     venv/*
     */test*
