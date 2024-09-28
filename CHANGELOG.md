@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.8] - 27-9-2024
+
+### Added
+
+- Se creo el movimiento de las pieza __knight__.
+
+___
+
 ## [0.2.7] - 26-9-2024
 
 ### Changed
