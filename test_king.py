@@ -1,9 +1,9 @@
 import unittest
 
 import unittest.test
-from Game.king import King
-from Game.pawn import Pawn
-from Game.board import Board
+from king import *
+from pawn import *
+from board import *
 
 class Test_King(unittest.TestCase):
     def setUp(self):

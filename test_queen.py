@@ -1,7 +1,7 @@
 import unittest
-from Game.queen import Queen
-from Game.pawn import Pawn
-from Game.board import *
+from queen import *
+from pawn import *
+from board import *
 
 class Test_Queen(unittest.TestCase):
     def setUp(self):

@@ -1,7 +1,7 @@
 import unittest
-from Game.bishop import Bishop
-from Game.pawn import Pawn
-from Game.board import *
+from bishop import *
+from pawn import *
+from board import *
 
 class Test_Bishop(unittest.TestCase):   
     def setUp(self):

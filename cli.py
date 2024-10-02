@@ -1,5 +1,5 @@
-from Game.chess import Chess
-from Game.exceptions import InvalidMove
+from chess import Chess
+from exceptions import InvalidMove
 
 def main():
     chess = Chess()

@@ -41,7 +41,6 @@ class Piece:
                 row += row_step
                 col += col_step
             return True
-        return False
         
     def move(self, from_row, from_col, to_row, to_col, board):        
         if self.type_move(from_row, from_col, to_row, to_col, board):

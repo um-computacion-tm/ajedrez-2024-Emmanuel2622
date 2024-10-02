@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.9] - 2-10-2024
+
+### Added
+
+- Archivo `test_knight.py` creado. Se agregaron los test de la pieza __Knight__.
+
+## [0.2.8] - 27-9-2024
+
+### Added
+
+- Se creo el movimiento de las pieza __knight__.
+
+___
+
 ## [0.2.7] - 26-9-2024
 
 ### Changed
