@@ -1,9 +1,9 @@
-from game.pieces import Piece
+from pieces import Piece
 
-class King(Piece):
-    white_str = "♔"
-    black_str = "♚"
-
+class Queen(Piece):
+    white_str = "♕"
+    black_str = "♛"
+    
     def __init__(self, color):
         super().__init__(color)
         self.__horizontal__ = True
@@ -12,9 +12,6 @@ class King(Piece):
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         if self.is_same_color(from_row, from_col, to_row, to_col, board):
+            print("paso1")
             return False
-
-        if abs(from_row - to_row) <= 1 and abs(from_col - to_col) <= 1:
-            return True
-
-        return False
+        return self.clear_path(from_row, from_col, to_row, to_col, board)

@@ -1,5 +1,5 @@
 import unittest
-from game.chess import *
+from chess import *
 
 class Test_Chess(unittest.TestCase):
     def setUp(self):

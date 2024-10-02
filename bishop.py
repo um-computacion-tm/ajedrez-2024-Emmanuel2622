@@ -1,4 +1,4 @@
-from game.pieces import Piece
+from pieces import Piece
 
 class Bishop(Piece):
     white_str = "♗"
