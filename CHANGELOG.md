@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0] - 4-10-2024
+
+### Changed 
+
+- En el archivo `Pieces.py`, se hizo una refactorización de la función __clear_path__, separando las diferentes verificaciones (movimiento horizontal, vertical y diagonal) en funciones más pequeñas y reutilizables.
+
+___
+
 ## [0.2.9] - 2-10-2024
 
 ### Added
