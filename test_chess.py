@@ -1,48 +1,45 @@
 import unittest
 from chess import *
+from board import *
+from pawn import Pawn
 
 class Test_Chess(unittest.TestCase):
     def setUp(self):
         self.__chess__ = Chess()
+        self.__board__ = Board()
 
     def test_move_from_col(self):        
         result = self.__chess__.move(0,8,0,0)
-        print(result)
         self.assertEqual(
             result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_to_col(self):
         result = self.__chess__.move(3,4,1,-6)
-        print(result)
         self.assertEqual(
             result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_from_row(self):
         result = self.__chess__.move(9,2,0,0)
-        print(result)
         self.assertEqual(
             result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_to_row(self):
         result = self.__chess__.move(5,2,9,0)
-        print(result)
         self.assertEqual(
             result, "error: La posicion indicada se encuentra fuera del tablero"
         )
 
     def test_move_pass(self):
         result = self.__chess__.move(6,0,5,0)
-        print(result)
         self.assertEqual(
             result, None
         )
 
     def test_move_valor_no_numerico(self):
         result = self.__chess__.move(0,"hola",0,0)
-        print(result)
         self.assertEqual(
             result, "error: Valor no Numerico"
         )    
@@ -50,7 +47,6 @@ class Test_Chess(unittest.TestCase):
     def test_change_turn_black(self):
         result = self.__chess__.change_turn()
         self.__chess__.__turn__ = "WHITE"
-        print(result)
         self.assertEqual(
             result, "BLACK"
         )
@@ -60,14 +56,12 @@ class Test_Chess(unittest.TestCase):
 
         result = self.__chess__.change_turn()
         self.__chess__.__turn__ = "BLACK"
-        print(result)
         self.assertEqual(
             result, "WHITE"
         )
 
     def test_move_no_hay_pieza(self):
         result = self.__chess__.move(4,0,5,0)
-        print(result)
         self.assertEqual(
             result, "error: La posicion esta vacia"
         )
@@ -82,6 +76,22 @@ class Test_Chess(unittest.TestCase):
         result = self.__chess__.move(6,0,5,3)
         self.assertEqual(
             result, "error: Movimiento de pieza Invalido"
+        )
+
+    def test_game_over(self):
+        self.__chess__.__game_over__ = True 
+        
+        result = self.__chess__.move(0, 0, 1, 1)  # Intentar hacer un movimiento
+        self.assertEqual(
+            result, "La partida ha terminado."
+        )
+    
+    def test_check_game_over(self):
+        self.__chess__.white_pieces = 0
+        result = self.__chess__.move(6,1,5,1)
+        self.assertEqual(
+            result, 
+            None
         )
 if __name__ == "__main__":
     unittest.main()
