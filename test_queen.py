@@ -70,12 +70,10 @@ class Test_Queen(unittest.TestCase):
         self.__pawn_white__.move(6, 2, 5, 2, self.__board__)
         result = self.__Queen__.move(5, 3, 2, 0, self.__board__)
         self.assertEqual(result, True)
-        print(self.__board__.__str__(),"test")
         
     def test_is_same_color(self):
         result = self.__Queen__.move(7, 3, 7, 2, self.__board__)
         self.assertEqual(result, 'Error en el movimiento')
-        print(self.__board__.__str__(),"test")
         
 
 if __name__ == "__main__":
