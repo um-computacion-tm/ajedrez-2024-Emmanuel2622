@@ -21,7 +21,6 @@ class Test_Rook(unittest.TestCase):
         
         result = self.__rook__.move(7,0,2,0, self.__board__)
         self.assertEqual(result, True)
-        print(self.__board__.__str__())
 
     def test_move_horizontal_good(self):
         self.__pawn_black__.move(2,1,3,1,self.__board__)
@@ -31,7 +30,6 @@ class Test_Rook(unittest.TestCase):
         
         result = self.__rook__.move(5,0,5,2, self.__board__)
         self.assertEqual(result, True)
-        print(self.__board__.__str__())
 
     def test_move_vertical_bad(self):
         self.__pawn_black__.move(2,1,3,1,self.__board__)
@@ -40,7 +38,6 @@ class Test_Rook(unittest.TestCase):
         
         result = self.__rook__.move(0,0,4,0, self.__board__)
         self.assertEqual(result, 'Error en el movimiento')
-        print(self.__board__.__str__())
 
 
     def test_move_horizontal_bad(self):
@@ -52,11 +49,9 @@ class Test_Rook(unittest.TestCase):
 
         result = self.__rook__.move(5,0,5,3, self.__board__)
         self.assertEqual(result, 'Error en el movimiento')
-        print(self.__board__.__str__())
 
     def test_is_same_color(self):
         result = self.__rook__.move(7,0,7,1, self.__board__)
         self.assertEqual(result, 'Error en el movimiento')
-        print(self.__board__.__str__())
 if __name__ == "__main__":
     unittest.main()

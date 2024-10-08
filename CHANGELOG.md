@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.3.2] - 7-10-2024
+
+### Added
+
+- Se le agregaron los Docstrings a los archivos.
+
+- Se agrego un ". " en las celdas vacias para hacer que el tablero sea mas legible.
+
+___
+
+## [0.3.1] - 6-10-2024
+
+### Added
+
+- Se le agregaron los Docstrings al archivo `pieces.py`.
+
+- Se implemento el metodo GameOver para cuando un jugador se quede sin piezas.
+
+### Changed
+
+- Se eliminaron los __Print__ innecesarios.
+___
+
 ## [0.3.0] - 4-10-2024
 
 ### Changed 

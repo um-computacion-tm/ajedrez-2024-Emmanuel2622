@@ -11,7 +11,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("WHITE")
         
         result = self.__pawn__.move(6,0,5,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, True
             )
@@ -20,7 +19,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("WHITE")
         
         result = self.__pawn__.move(6,0,5,1, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
             )
@@ -29,7 +27,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("WHITE")
         
         result = self.__pawn__.move(6,0,7,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
             )
@@ -38,7 +35,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("BLACK")
         
         result = self.__pawn__.move(1,0,2,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, True
             )
@@ -47,7 +43,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("BLACK")
         
         result = self.__pawn__.move(1,0,2,1, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
             )
@@ -56,7 +51,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__ = Pawn("BLACK")
         
         result = self.__pawn__.move(1,0,0,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
             )
@@ -66,7 +60,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__.__first_move__ = True
 
         result = self.__pawn__.move(6,0,4,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, True
         )
@@ -78,7 +71,6 @@ class Test_Pawn(unittest.TestCase):
         
         self.__pawn__.__first_move__ = False
         result = self.__pawn__.move(4,0,2,0, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
         )
@@ -88,7 +80,6 @@ class Test_Pawn(unittest.TestCase):
         self.__pawn__.__first_move__ = True
 
         result = self.__pawn__.move(1,3,3,3, self.__board__)
-        print(result)
         self.assertEqual(
             result, True
         )
@@ -100,7 +91,6 @@ class Test_Pawn(unittest.TestCase):
         
         self.__pawn__.__first_move__ = False
         result = self.__pawn__.move(2,6,4,6, self.__board__)
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
         )
@@ -113,7 +103,6 @@ class Test_Pawn(unittest.TestCase):
 
         self.__pawn__white__.move(6,5,4,5, self.__board__)
         result = self.__pawn__white__.move(4,5,3,6, self.__board__)
-        print(result)
         self.assertEqual(
             result, True
             )
@@ -126,8 +115,6 @@ class Test_Pawn(unittest.TestCase):
 
         self.__pawn__white__.move(6,5,5,5, self.__board__)
         result = self.__pawn__white__.move(5,5,4,6, self.__board__)
-        
-        print(result)
         self.assertEqual(
             result, "Error en el movimiento"
             )
