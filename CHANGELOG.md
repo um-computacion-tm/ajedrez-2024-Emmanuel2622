@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.2] - 7-10-2024
+
+### Added
+
+- Se le agregaron los Docstrings a los archivos.
+
+- Se agrego un ". " en las celdas vacias para hacer que el tablero sea mas legible.
+
+___
+
 ## [0.3.1] - 6-10-2024
 
 ### Added
