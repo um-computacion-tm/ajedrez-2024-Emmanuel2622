@@ -2,38 +2,65 @@ from board import *
 from exceptions import *
 
 class Chess:
+    """
+    Clase principal para gestionar un juego de ajedrez.
+    """
+
     def __init__(self):
         """
-        Inicializa el juego de ajedrez, creando un tablero, estableciendo el turno inicial 
-        como "WHITE", y configurando las variables de control del juego.
+        Inicializa el tablero de ajedrez y establece las configuraciones iniciales del juego.
         """
         self.__board__ = Board()
         self.__turn__ = "WHITE"
         self.__game_over__ = False
-        self.__white_pieces__ = self.__black_pieces__ = 0
+        self.__white_pieces__ = 0
+        self.__black_pieces__ = 0
+        self.__white_agrees__ = False
+        self.__black_agrees__ = False
+
+    def request_draw(self):
+        """
+        Permite a los jugadores solicitar un empate.
+
+        Si ambos jugadores están de acuerdo en solicitar el empate,
+        la partida se termina en tablas.
+
+        Returns:
+            str: Mensaje indicando si la partida ha terminado en empate o si se espera el acuerdo del otro jugador.
+        """
+        if self.__turn__ == "WHITE":
+            self.__white_agrees__ = True
+            print("Jugador blanco está de acuerdo en terminar la partida.")
+        else:
+            self.__black_agrees__ = True
+            print("Jugador negro está de acuerdo en terminar la partida.")
+
+        if self.__white_agrees__ and self.__black_agrees__:
+            self.__game_over__ = True
+            return "La partida ha terminado en empate."
+        else:
+            self.change_turn()
+            return "Esperando a que ambos jugadores estén de acuerdo."
 
     def move(self, from_row, from_col, to_row, to_col):
         """
-        Intenta realizar un movimiento en el tablero desde una posición de origen
-        a una posición de destino. Valida los parámetros y el estado del juego antes 
-        de realizar el movimiento.
+        Realiza un movimiento en el tablero de ajedrez.
+
+        Valida si el movimiento es legal y cambia el turno del jugador si es válido.
+        Si el movimiento no es válido, se captura una excepción y se devuelve un mensaje de error.
 
         Args:
-            from_row (int): Fila de origen.
-            from_col (int): Columna de origen.
-            to_row (int): Fila de destino.
-            to_col (int): Columna de destino.
+            from_row (int): Fila inicial de la pieza.
+            from_col (int): Columna inicial de la pieza.
+            to_row (int): Fila destino de la pieza.
+            to_col (int): Columna destino de la pieza.
 
         Returns:
-            str: Un mensaje de error si ocurre un problema durante el movimiento, 
-            o el turno si el movimiento es exitoso.
+            str: Mensaje de error si el movimiento no es válido. Si es válido, devuelve None.
         """
         try:
-            if self.__game_over__:
-                return "La partida ha terminado."
-
             if not all(isinstance(x, int) for x in [from_row, from_col, to_row, to_col]):
-                raise ValueError("Valor no Numerico")
+                raise ValueError("Valor no Numérico")
             if from_row < 0 or from_row > 7 or from_col < 0 or from_col > 7 or to_row < 0 or to_row > 7 or to_col < 0 or to_col > 7:
                 raise OutOfBoard
 
@@ -43,10 +70,8 @@ class Chess:
             if piece.__color__ != self.__turn__:
                 raise InvalidTurn
 
-            print(f"Piece at from position: {piece}")
-
             if piece.move(from_row, from_col, to_row, to_col, self.__board__) != "Error en el movimiento":
-                self.change_turn()    
+                self.change_turn()
                 if self.check_game_over():
                     self.__game_over__ = True
                     print(f"El jugador {self.__turn__} ha ganado la partida.")
@@ -64,12 +89,17 @@ class Chess:
 
     def check_game_over(self):
         """
-        Verifica si alguno de los jugadores ha perdido todas sus piezas. 
-        Esto determinaría el final del juego.
+        Verifica si el juego ha terminado al perder todas las piezas de un jugador.
+
+        Cuenta las piezas de cada jugador y determina si alguno ha perdido todas.
+        Si es así, devuelve True y declara un ganador.
 
         Returns:
             bool: True si el juego ha terminado, False en caso contrario.
         """
+        self.__white_pieces__ = 0
+        self.__black_pieces__ = 0
+
         for row in self.__board__.__positions__:
             for piece in row:
                 if piece is not None:
@@ -86,13 +116,13 @@ class Chess:
             return True
         return False
 
-    @property        
+    @property
     def turn(self):
         """
-        Obtiene el turno actual del juego.
+        Devuelve el turno actual del jugador.
 
         Returns:
-            str: El color del jugador que tiene el turno ("WHITE" o "BLACK").
+            str: El color del jugador actual que tiene el turno ("WHITE" o "BLACK").
         """
         return self.__turn__
 
@@ -101,7 +131,7 @@ class Chess:
         Muestra el estado actual del tablero.
 
         Returns:
-            str: Representación en cadena del tablero.
+            str: Representación en cadena del tablero de ajedrez.
         """
         return str(self.__board__)
 
@@ -109,8 +139,10 @@ class Chess:
         """
         Cambia el turno del jugador actual.
 
+        Alterna el turno entre "WHITE" y "BLACK".
+
         Returns:
-            str: El nuevo turno del jugador.
+            str: El nuevo turno después del cambio.
         """
         self.__turn__ = "BLACK" if self.__turn__ == "WHITE" else "WHITE"
         return self.__turn__
