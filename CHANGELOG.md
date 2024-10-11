@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.3.3] - 11-10-2024
+
+## Added
+
+- Se implemento el metodo de __request_draw()__ para poder terminar la partida en empate si los dos jugadores estan de acuerdo.
+
+- Se implemento el metodo __signal_handler()__ que maneja la señal cuando el jugador presiona __"ctrl + C"__ y envia la solicitud de salir a los jugadores.
+
+### Changed
+
+- Se agregaron los strings numericos para identificar las filas y columnas en el tablero.
+
+___
+
 ## [0.3.2] - 7-10-2024
 
 ### Added
