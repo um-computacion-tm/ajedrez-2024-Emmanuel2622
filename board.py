@@ -36,17 +36,20 @@ class Board:
     
     def __str__(self):
         """
-        Devuelve una representación en cadena del tablero de ajedrez.
+        Devuelve una representación en cadena del tablero de ajedrez con los números de filas y columnas.
         """
-        board_str = ""
-        for row in self.__positions__:
+        board_str = "  0 1 2 3 4 5 6 7\n"  # Números de columna en la parte superior
+        for i, row in enumerate(self.__positions__):
+            board_str += f"{i} "  # Número de fila al comienzo de cada línea
             for cell in row:
                 if cell is not None:
                     board_str += f"{str(cell)} "  # Espacio para mejor legibilidad
                 else:
                     board_str += ". "  # Poner un punto para las celdas vacías
-            board_str += "\n"
+            board_str += f"{i}\n"  # Número de fila al final de cada línea para simetría
+        board_str += "  0 1 2 3 4 5 6 7\n"  # Números de columna en la parte inferior
         return board_str
+
 
     def get_piece(self, row, col):
         """
