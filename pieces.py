@@ -42,21 +42,40 @@ class Piece:
         if board.get_piece(row, col) is not None:
                 return False
         return True
-    
-    def clear_horizontal_path(self, from_row, to_col, from_col, board):
-        step = 1 if to_col > from_col else -1
-        for col in range(from_col + step, to_col, step):
-            if not self.validate_path_is_clean(from_row, col, board):
-                return False
-        return True
+    def get_step(self):
+        ...
+    def get_iteration(self, target, dest, step):
+        for coord in range(target + step, dest, step):
+            yield coord
 
-    def clear_vertical_path(self, from_row, to_row, from_col, board):
-
-        step = 1 if to_row > from_row else -1
-        for row in range(from_row + step, to_row, step):
-            if not self.validate_path_is_clean(row, from_col, board):
-                return False
+    def clear_path(self, a, b, c, board, direction):
+        if direction == "h":
+            step = 1 if c > b else -1
+            for coord in self.get_iteration(target=b, dest=c, step=step):
+                if not self.validate_path_is_clean(a, coord, board):
+                    return False
+                
+        if direction == "v":
+            step = 1 if c > a else -1
+            for coord in self.get_iteration(target=a, dest=c, step=step):
+                if not self.validate_path_is_clean(coord, b, board):
+                    return False
         return True
+        
+    # def clear_horizontal_path(self, from_row, from_col, to_col, board):
+    #     step = 1 if to_col > from_col else -1
+    #     for col in range(from_col + step, to_col, step):
+    #         if not self.validate_path_is_clean(from_row, col, board):
+    #             return False
+    #     return True
+
+    # def clear_vertical_path(self, from_row, from_col, to_row, board):
+
+    #     step = 1 if to_row > from_row else -1
+    #     for coord in self.get_iteration(target=from_row, dest=to_row, step=step):
+    #         if not self.validate_path_is_clean(coord, from_col, board):
+    #             return False
+    #     return True
 
     def clear_diagonal_path(self, from_row, from_col, to_row, to_col, board):
         """
