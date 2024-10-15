@@ -49,18 +49,18 @@ class Piece:
             yield coord
 
     def clear_path(self, a, b, c, board, direction):
-        if direction == "h":
-            step = 1 if c > b else -1
-            for coord in self.get_iteration(target=b, dest=c, step=step):
+        step = 1 if c > (b if direction == "h" else a) else -1
+        coordinates = self.get_iteration(target=(b if direction == "h" else a), dest=c, step=step)
+        
+        for coord in coordinates:
+            if direction == "h":
                 if not self.validate_path_is_clean(a, coord, board):
                     return False
-                
-        if direction == "v":
-            step = 1 if c > a else -1
-            for coord in self.get_iteration(target=a, dest=c, step=step):
+            elif direction == "v":
                 if not self.validate_path_is_clean(coord, b, board):
-                    return False
+                    return False           
         return True
+
         
     # def clear_horizontal_path(self, from_row, from_col, to_col, board):
     #     step = 1 if to_col > from_col else -1
