@@ -40,18 +40,7 @@ class Piece:
 
 
     def clear_horizontal_path(self, from_row, from_col, to_col, board):
-        """
-        Verifica si el camino horizontal entre la posición de origen y destino está despejado.
-
-        Args:
-            from_row (int): Fila de la posición de origen.
-            from_col (int): Columna de la posición de origen.
-            to_col (int): Columna de la posición destino.
-            board (Board): Instancia del tablero de juego.
-
-        Returns:
-            bool: True si el camino está despejado, False si hay una pieza en el camino.
-        """
+        
         step = 1 if to_col > from_col else -1
         for col in range(from_col + step, to_col, step):
             if board.get_piece(from_row, col) is not None:
@@ -59,18 +48,7 @@ class Piece:
         return True
 
     def clear_vertical_path(self, from_row, to_row, from_col, board):
-        """
-        Verifica si el camino vertical entre la posición de origen y destino está despejado.
 
-        Args:
-            from_row (int): Fila de la posición de origen.
-            to_row (int): Fila de la posición destino.
-            from_col (int): Columna de la posición de origen.
-            board (Board): Instancia del tablero de juego.
-
-        Returns:
-            bool: True si el camino está despejado, False si hay una pieza en el camino.
-        """
         step = 1 if to_row > from_row else -1
         for row in range(from_row + step, to_row, step):
             if board.get_piece(row, from_col) is not None:
