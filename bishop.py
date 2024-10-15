@@ -3,9 +3,6 @@ from pieces import Piece
 class Bishop(Piece):
     white_str = "♗"
     black_str = "♝"
-    horizontal = False
-    vertical = False
-    diagonal = True
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """
@@ -27,6 +24,6 @@ class Bishop(Piece):
             # El alfil se mueve en diagonal, por lo que la diferencia en filas debe ser igual a la de columnas
             if abs(to_row - from_row) == abs(to_col - from_col):
                 # Verificar si el camino está despejado para el movimiento
-                return self.clear_path(from_row, from_col, to_row, to_col, board)
+                return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
         return False
 

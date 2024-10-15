@@ -38,28 +38,6 @@ class Piece:
                 return True
         return False
 
-    def clear_path(self, from_row, from_col, to_row, to_col, board):
-        """
-        Verifica que no haya ninguna pieza bloqueando el camino hacia la posición destino.
-
-        Args:
-            from_row (int): Fila de la posición de origen.
-            from_col (int): Columna de la posición de origen.
-            to_row (int): Fila de la posición destino.
-            to_col (int): Columna de la posición destino.
-            board (Board): Instancia del tablero de juego.
-
-        Returns:
-            bool: True si el camino está despejado, False si hay una pieza en el camino.
-        """
-        piece = board.get_piece(from_row, from_col)
-        
-        if from_row == to_row and piece.horizontal:  # Movimiento horizontal
-            return self.clear_horizontal_path(from_row, from_col, to_col, board)
-        elif to_col == from_col and piece.vertical:  # Movimiento vertical
-            return self.clear_vertical_path(from_row, to_row, from_col, board)
-        elif abs(to_row - from_row) == abs(to_col - from_col) and piece.diagonal:  # Movimiento diagonal
-            return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
 
     def clear_horizontal_path(self, from_row, from_col, to_col, board):
         """
