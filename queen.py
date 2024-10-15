@@ -3,9 +3,7 @@ from pieces import Piece
 class Queen(Piece):
     white_str = "♕"
     black_str = "♛"
-    horizontal = True
-    vertical = True
-    diagonal = True
+
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """
@@ -29,4 +27,9 @@ class Queen(Piece):
             return False
         
         # Verifica si hay un camino despejado para el movimiento
-        return self.clear_path(from_row, from_col, to_row, to_col, board)
+        if from_row == to_row:  # Movimiento horizontal
+            return self.clear_horizontal_path(from_row, from_col, to_col, board)
+        elif to_col == from_col:  # Movimiento vertical
+            return self.clear_vertical_path(from_row, to_row, from_col, board)
+        elif abs(to_row - from_row):  # Movimiento diagonal
+            return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
