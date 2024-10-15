@@ -61,10 +61,10 @@ class Chess:
         try:
             if not all(isinstance(x, int) for x in [from_row, from_col, to_row, to_col]):
                 raise ValueError("Valor no Numérico")
-            if from_row < 0 or from_row > 7 or from_col < 0 or from_col > 7 or to_row < 0 or to_row > 7 or to_col < 0 or to_col > 7:
-                raise OutOfBoard
-
+            # if from_row < 0 or from_row > 7 or from_col < 0 or from_col > 7 or to_row < 0 or to_row > 7 or to_col < 0 or to_col > 7:
+            #     raise OutOfBoard
             piece = self.__board__.get_piece(from_row, from_col)
+            self.__board__.get_piece(to_row, to_col)
             if piece is None:
                 raise EmptyPosition
             if piece.__color__ != self.__turn__:
@@ -78,13 +78,14 @@ class Chess:
             else:
                 raise InvalidMove
 
-        except InvalidMove as e:
-            return f"error: {e}"
+
         except EmptyPosition as e:
             return f"error: {e}"
         except OutOfBoard as e:
             return f"error: {e}"
         except ValueError as e:
+            return f"error: {e}"
+        except InvalidMove as e:
             return f"error: {e}"
 
     def check_game_over(self):

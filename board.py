@@ -4,6 +4,7 @@ from knight import Knight
 from bishop import Bishop
 from queen import Queen
 from king import King
+from exceptions import *
 class Board:
     def __init__(self):
         self.__positions__ = [[None for _ in range(8)] for _ in range(8)]
@@ -62,4 +63,9 @@ class Board:
         Returns:
             Pieza: Objeto de pieza o None si la posición está vacía.
         """
-        return self.__positions__[row][col]
+        if row < 0 or col < 0:
+            raise OutOfBoard
+        try:
+            return self.__positions__[row][col]
+        except IndexError:
+            raise OutOfBoard
