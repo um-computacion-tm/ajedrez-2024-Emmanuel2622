@@ -4,15 +4,6 @@ class Knight(Piece):
     white_str = "♘"
     black_str = "♞"
 
-    def __init__(self, color):
-        """
-        Inicializa un objeto de tipo Knight (caballo) con un color específico.
-
-        Args:
-            color (str): El color de la pieza, puede ser 'WHITE' o 'BLACK'.
-        """
-        super().__init__(color)
-
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """
         Verifica si el movimiento del caballo es válido.
