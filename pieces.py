@@ -54,11 +54,11 @@ class Piece:
         """
         piece = board.get_piece(from_row, from_col)
         
-        if from_row == to_row and piece.__horizontal__:  # Movimiento horizontal
+        if from_row == to_row and piece.horizontal:  # Movimiento horizontal
             return self.clear_horizontal_path(from_row, from_col, to_col, board)
-        elif to_col == from_col and piece.__vertical__:  # Movimiento vertical
+        elif to_col == from_col and piece.vertical:  # Movimiento vertical
             return self.clear_vertical_path(from_row, to_row, from_col, board)
-        elif abs(to_row - from_row) == abs(to_col - from_col) and piece.__diagonal__:  # Movimiento diagonal
+        elif abs(to_row - from_row) == abs(to_col - from_col) and piece.diagonal:  # Movimiento diagonal
             return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
 
     def clear_horizontal_path(self, from_row, from_col, to_col, board):

@@ -3,18 +3,9 @@ from pieces import Piece
 class Rook(Piece):
     white_str = "♖"
     black_str = "♜"
-
-    def __init__(self, color):
-        """
-        Inicializa un objeto de tipo Rook (torre) con un color específico.
-
-        Args:
-            color (str): El color de la pieza, puede ser 'WHITE' o 'BLACK'.
-        """
-        super().__init__(color)
-        self.__horizontal__ = True
-        self.__vertical__ = True
-        self.__diagonal__ = False
+    horizontal = True
+    vertical = True
+    diagonal = False
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """

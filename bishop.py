@@ -3,18 +3,9 @@ from pieces import Piece
 class Bishop(Piece):
     white_str = "♗"
     black_str = "♝"
-
-    def __init__(self, color):
-        """
-        Inicializa un objeto de tipo Bishop (alfil) con un color específico.
-
-        Args:
-            color (str): El color de la pieza, puede ser 'WHITE' o 'BLACK'.
-        """
-        super().__init__(color)
-        self.__horizontal__ = False
-        self.__vertical__ = False
-        self.__diagonal__ = True
+    horizontal = False
+    vertical = False
+    diagonal = True
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """
