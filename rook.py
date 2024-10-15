@@ -27,6 +27,6 @@ class Rook(Piece):
 
         # Verifica si hay un camino despejado para el movimiento
         if from_row == to_row:  # Movimiento horizontal
-            return self.clear_horizontal_path(from_row, from_col, to_col, board)
+            return self.clear_path(from_row, from_col, to_col, board, direction="h")
         elif to_col == from_col:  # Movimiento vertical
-            return self.clear_vertical_path(from_row, to_row, from_col, board)
+            return self.clear_path(from_row, from_col,to_row, board, direction="v")
