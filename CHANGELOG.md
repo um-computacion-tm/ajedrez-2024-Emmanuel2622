@@ -1,8 +1,16 @@
 # Changelog
 
+## [0.3.4] - 15-10-2024
+
+### Added 
+
+- Refactorización de las clases de las piezas y corrección de los Docstrings para mejorar la claridad.
+
+___
+
 ## [0.3.3] - 11-10-2024
 
-## Added
+### Added
 
 - Se implemento el metodo de __request_draw()__ para poder terminar la partida en empate si los dos jugadores estan de acuerdo.
 
