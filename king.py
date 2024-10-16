@@ -1,16 +1,22 @@
 from pieces import Piece
 
 class King(Piece):
+    """
+    Clase que representa al rey en el tablero de ajedrez.
+
+    Attributes:
+        white_str (str): Representación del rey blanco en formato de texto.
+        black_str (str): Representación del rey negro en formato de texto.
+    """
     white_str = "♔"
     black_str = "♚"
-    horizontal = True
-    vertical = True
-    diagonal = True
 
     def type_move(self, from_row, from_col, to_row, to_col, board):
         """
-        Verifica si el movimiento es válido para el rey. El rey se mueve una casilla en cualquier dirección
-        (horizontal, vertical o diagonal), siempre que no esté bloqueado por una pieza del mismo color.
+        Verifica si el movimiento es válido para el rey.
+
+        El rey se puede mover una casilla en cualquier dirección: horizontal, vertical o diagonal, siempre 
+        que no haya una pieza del mismo color en la casilla de destino.
 
         Args:
             from_row (int): Fila de origen del rey.

@@ -1,6 +1,14 @@
 from pieces import Piece
 
 class Knight(Piece):
+    """
+    Clase que representa la pieza del caballo en el ajedrez.
+
+    El caballo se mueve en forma de 'L', lo que significa que puede moverse dos casillas 
+    en una dirección y luego una casilla en una dirección perpendicular, o viceversa.
+    Puede saltar sobre otras piezas.
+    """
+
     white_str = "♘"
     black_str = "♞"
 
@@ -10,6 +18,7 @@ class Knight(Piece):
 
         El caballo se mueve en forma de 'L', lo que significa que se mueve dos casillas en una dirección 
         (horizontal o vertical) y luego una casilla en una dirección perpendicular. 
+        El caballo también puede saltar sobre otras piezas.
 
         Args:
             from_row (int): Fila de origen del caballo.

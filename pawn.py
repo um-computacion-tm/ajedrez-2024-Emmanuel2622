@@ -1,6 +1,13 @@
 from pieces import Piece
 
-class Pawn(Piece):        
+class Pawn(Piece):
+    """
+    Clase que representa la pieza del peón en ajedrez.
+
+    El peón tiene movimientos específicos, avanzando una o dos casillas hacia adelante 
+    en su primer movimiento y atacando en diagonal.
+    """
+
     white_str = "♙"
     black_str = "♟"
 
@@ -18,8 +25,11 @@ class Pawn(Piece):
         """
         Verifica si el movimiento del peón es válido.
 
-        Los peones se mueven hacia adelante y pueden avanzar una o dos casillas en su primer movimiento. 
-        También pueden atacar piezas en diagonales.
+        Los peones avanzan hacia adelante y tienen las siguientes reglas:
+        - En su primer movimiento, pueden avanzar una o dos casillas.
+        - Después de su primer movimiento, solo pueden avanzar una casilla.
+        - Atacan en diagonal.
+        - No pueden moverse hacia atrás.
 
         Args:
             from_row (int): Fila de origen del peón.
@@ -46,7 +56,7 @@ class Pawn(Piece):
                 self._first_move = False  # Marca que el peón ha realizado su primer movimiento
                 return True
 
-        # Ataque
+        # Ataque en diagonal
         if abs(from_col - to_col) == 1 and to_row == from_row + direction:
             target_piece = board.get_piece(to_row, to_col)
             if target_piece is not None and target_piece.__color__ != self.__color__:
