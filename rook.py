@@ -1,6 +1,13 @@
 from pieces import Piece
 
 class Rook(Piece):
+    """
+    Clase que representa la pieza de la torre en el ajedrez.
+
+    La torre puede moverse en línea recta, ya sea horizontal o verticalmente, 
+    sin saltar sobre otras piezas. Hereda de la clase Piece.
+    """
+
     white_str = "♖"
     black_str = "♜"
 
@@ -30,3 +37,5 @@ class Rook(Piece):
             return self.clear_path(from_row, from_col, to_col, board, direction="h")
         elif to_col == from_col:  # Movimiento vertical
             return self.clear_path(from_row, from_col, to_row, board, direction="v")
+        else:
+            return False  # Movimiento no válido para una torre (ni horizontal ni vertical)

@@ -39,43 +39,61 @@ class Piece:
         return False
 
     def validate_path_is_clean(self, row, col, board):
+        """
+        Verifica si una posición en el tablero está vacía.
+
+        Args:
+            row (int): Fila de la posición a verificar.
+            col (int): Columna de la posición a verificar.
+            board (Board): Instancia del tablero de juego.
+
+        Returns:
+            bool: True si la posición está vacía, False si hay una pieza en esa posición.
+        """
         if board.get_piece(row, col) is not None:
-                return False
+            return False
         return True
-    def get_step(self):
-        ...
+    
     def get_iteration(self, target, dest, step):
+        """
+        Genera una secuencia de números entre el origen y el destino, con un paso específico.
+
+        Args:
+            target (int): El valor inicial.
+            dest (int): El valor final.
+            step (int): El tamaño del paso entre los valores.
+
+        Yields:
+            int: Un valor de la secuencia en cada iteración.
+        """
         for coord in range(target + step, dest, step):
             yield coord
 
-    def clear_path(self, a, b, c, board, direction):
-        step = 1 if c > (b if direction == "h" else a) else -1
-        coordinates = self.get_iteration(target=(b if direction == "h" else a), dest=c, step=step)
+    def clear_path(self, from_row, from_col, destin, board, direction):
+        """
+        Verifica si el camino entre dos posiciones en una dirección específica está despejado.
+
+        Args:
+            from_row (int): Fila de la posición de origen.
+            from_col (int): Columna de la posición de origen.
+            destin (int): El destino (puede ser fila o columna según la dirección).
+            board (Board): Instancia del tablero de juego.
+            direction (str): Dirección a verificar ('h' para horizontal, 'v' para vertical).
+
+        Returns:
+            bool: True si el camino está despejado, False si hay una pieza en el camino.
+        """
+        step = 1 if destin > (from_col if direction == "h" else from_row) else -1
+        coordinates = self.get_iteration(target=(from_col if direction == "h" else from_row), dest=destin, step=step)
         
         for coord in coordinates:
             if direction == "h":
-                if not self.validate_path_is_clean(a, coord, board):
+                if not self.validate_path_is_clean(from_row, coord, board):
                     return False
             elif direction == "v":
-                if not self.validate_path_is_clean(coord, b, board):
+                if not self.validate_path_is_clean(coord, from_col, board):
                     return False           
         return True
-
-        
-    # def clear_horizontal_path(self, from_row, from_col, to_col, board):
-    #     step = 1 if to_col > from_col else -1
-    #     for col in range(from_col + step, to_col, step):
-    #         if not self.validate_path_is_clean(from_row, col, board):
-    #             return False
-    #     return True
-
-    # def clear_vertical_path(self, from_row, from_col, to_row, board):
-
-    #     step = 1 if to_row > from_row else -1
-    #     for coord in self.get_iteration(target=from_row, dest=to_row, step=step):
-    #         if not self.validate_path_is_clean(coord, from_col, board):
-    #             return False
-    #     return True
 
     def clear_diagonal_path(self, from_row, from_col, to_row, to_col, board):
         """
