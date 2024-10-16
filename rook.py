@@ -37,5 +37,3 @@ class Rook(Piece):
             return self.clear_path(from_row, from_col, to_col, board, direction="h")
         elif to_col == from_col:  # Movimiento vertical
             return self.clear_path(from_row, from_col, to_row, board, direction="v")
-        else:
-            return False  # Movimiento no válido para una torre (ni horizontal ni vertical)
