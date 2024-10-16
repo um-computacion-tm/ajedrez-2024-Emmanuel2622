@@ -38,12 +38,9 @@ class Queen(Piece):
             return self.clear_path(from_row, from_col, to_col, board, direction="h")
         
         # Verifica si es un movimiento vertical
-        elif from_col == to_col:
+        elif to_col == from_col:
             return self.clear_path(from_row, from_col, to_row, board, direction="v")
-        
+    
         # Verifica si es un movimiento diagonal
-        elif abs(to_row - from_row) == abs(to_col - from_col):
-            return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
-
-        # Si no cumple con ninguno de los movimientos válidos de la reina
-        return False
+        elif self.clear_diagonal_path(from_row, from_col, to_row, to_col, board):
+            return True

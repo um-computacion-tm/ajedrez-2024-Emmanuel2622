@@ -29,9 +29,8 @@ class Bishop(Piece):
             bool: True si el movimiento es válido, False en caso contrario.
         """
         # Verificar que no es la misma posición ni hay una pieza del mismo color en la posición destino
-        if not self.is_same_color(from_row, from_col, to_row, to_col, board):
-            # El alfil se mueve en diagonal: la diferencia entre filas debe ser igual a la de columnas
-            if abs(to_row - from_row) == abs(to_col - from_col):
-                # Verificar si el camino está despejado para el movimiento diagonal
-                return self.clear_diagonal_path(from_row, from_col, to_row, to_col, board)
-        return False
+        if self.is_same_color(from_row, from_col, to_row, to_col, board):
+            return False
+        # El alfil se mueve en diagonal: la diferencia entre filas debe ser igual a la de columnas
+        if self.clear_diagonal_path(from_row, from_col, to_row, to_col, board):
+            return True
