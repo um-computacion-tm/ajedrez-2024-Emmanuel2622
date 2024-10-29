@@ -1,6 +1,5 @@
 import unittest
 
-import unittest.test
 from king import *
 from pawn import *
 from board import *
