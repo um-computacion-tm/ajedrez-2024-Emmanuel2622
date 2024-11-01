@@ -34,12 +34,12 @@ Para ejecutar el juego en un entorno Dockerizado, sigue estos pasos:
    
 1. Construir la imagen de Docker:
    ```bash
-   docker build -t ajedrez:latest .
+      docker buildx build -t ajedrez-2024-Emmanuel2622 .
    ```
 
 2. Ejecutar el contenedor:
    ```bash
-   docker run -it ajedrez:latest
+      docker run -i ajedrez-2024-Emmanuel2622
    ```
 Esto iniciará el juego de ajedrez en un contenedor de Docker, permitiéndote jugar desde la terminal.
 
@@ -53,20 +53,6 @@ Cuando sea tu turno, puedes mover una pieza proporcionando las coordenadas de or
    To col: 0
    ```
 Puedes salir del juego y solicitar un empate en cualquier momento presionando Ctrl + C.
-
-### Modo Testing
-Para ejecutar las pruebas unitarias del proyecto, sigue estos pasos:
-
-1. Asegúrate de tener Docker instalado y ejecutándose.
-2. Construir la imagen de Docker para pruebas (puedes tener un Dockerfile específico para pruebas si es necesario):
-   ```bash
-      docker build -t ajedrez:test -f Dockerfile.test .
-   ```
-3. Ejecutar el contenedor de pruebas:
-   ```bash
-   docker run ajedrez:test
-   ```
-Esto ejecutará las pruebas y generará un informe de cobertura si has configurado `coverage` en tu `Dockerfile` de pruebas.
 
 ## 🧪 Pruebas
 
